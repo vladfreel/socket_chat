@@ -1,0 +1,27 @@
+%header
+  %nav.navbar.header-main-navbar
+    .container-fluid
+      .navbar-header
+        .navbar-brand.company-name Socket Chat
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Home', root_path, class: '', id: 'home-id'
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li
+            = link_to edit_user_registration_path, class: '', id: 'header-profile' do
+              %i.glyphicon.glyphicon-user
+              Profile
+          %li
+            = link_to destroy_user_session_path, method: :delete, class: '', id: 'header-logout' do
+              %i.glyphicon.glyphicon-user
+              Logout
+        - else
+          %li
+            = link_to new_user_registration_path, class: '', id: 'header-sign-up' do
+              %i.glyphicon.glyphicon-user
+              Sign Up
+          %li
+            = link_to new_user_session_path, class: '', id: 'header-login' do
+              %i.glyphicon.glyphicon-log-in
+              Login
