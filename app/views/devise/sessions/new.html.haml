@@ -1,18 +1,18 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    %p
-      = f.label :login
-      %br/
-      = f.text_field :login
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.website-content
+  .container
+    .row
+      .col-xs-12
+        %h2.text-center.auth-head-text Log in
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.text_field :login, class: 'auth-input', id: 'login-input', placeholder: 'Login'
+          .field
+            = f.password_field :password, autocomplete: "off", class: 'auth-input', id: 'login-pwd-input', placeholder: 'Password'
+          - if devise_mapping.rememberable?
+            .field.remember-me
+              = f.check_box :remember_me
+              = f.label :remember_me
+          .actions
+            = f.submit "Log in", class: 'btn btn-default auth-submit'
+        .text-center.auth-links
+          = render "devise/shared/links"
