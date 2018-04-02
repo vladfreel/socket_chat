@@ -35,6 +35,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'haml-rails'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'redis', '~> 3.2'
 
 
 group :development, :test do

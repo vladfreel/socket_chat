@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
-  validates :username, presence: :true, uniqueness: { case_sensitive: false }
+  has_many :chat_rooms, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
-  # Only allow letter, number, underscore and punctuation.
+  validates :username, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   attr_accessor :login
@@ -18,5 +18,8 @@ class User < ApplicationRecord
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
       where(conditions.to_h).first
     end
+  end
+  def name
+    username
   end
 end
