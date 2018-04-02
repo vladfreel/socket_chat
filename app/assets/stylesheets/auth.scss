@@ -57,7 +57,6 @@
 .auth-submit {
   margin-top: 5px;
   margin-bottom: 15px !important;
-  //width: 280px;
   height: 40px;
   font-weight: bolder !important;
   font-size: large !important;
@@ -67,7 +66,7 @@
   visibility: hidden;
   position: absolute;
   z-index: 1;
-  bottom: 28%;
+  bottom: 36%;
   left: 50%;
   margin-left: -60px;
   width: 160px;
@@ -145,4 +144,47 @@ input:-webkit-autofill:active {
 
 .remember-me {
   color: white;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  width: 97%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  margin-bottom: 10px !important;
+  background-color: #EEE;
+
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.btn-file:hover {
+  background: #E0E0E0;
+}
+
+#p-sign-up-avatar {
+  margin-bottom: 0px !important;
+  font-weight: bolder;
+  font-size: large;
+}
+
+#p-profile-avatar {
+  margin-bottom: 0px !important;
+  font-weight: bolder;
+  font-size: large;
 }

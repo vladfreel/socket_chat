@@ -16,6 +16,12 @@
                 = "#{@minimum_password_length} characters minimum"
           .field
             = f.password_field :password_confirmation, autocomplete: "off", class: 'auth-input', placeholder: 'Password Confirmation'
+          .field
+            %span.btn.btn-file{id: 'avatar-sign-up-button'}
+              %p#p-sign-up-avatar
+                %span
+                  Choose Avatar
+              \#{f.file_field :avatar, id: 'avatar-sign-up'}
           .actions
             = f.submit 'Sign up', class: 'btn btn-default auth-submit'
         .text-center.auth-links
