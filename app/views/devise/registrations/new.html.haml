@@ -17,6 +17,6 @@
           .field
             = f.password_field :password_confirmation, autocomplete: "off", class: 'auth-input', placeholder: 'Password Confirmation'
           .actions
-            = f.submit "Sign up", class: 'btn btn-default auth-submit'
+            = f.submit 'Sign up', class: 'btn btn-default auth-submit'
         .text-center.auth-links
           = render "devise/shared/links"
