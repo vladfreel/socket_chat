@@ -13,6 +13,15 @@
   float: none;
 }
 
+.edit-user {
+  text-align: center;
+  border-radius: 14px;
+  background-color: #337ab7;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
 .auth-input {
   height: 40px;
   margin-bottom: 10px;
@@ -103,6 +112,9 @@ input:-webkit-autofill:active {
   #new_user {
     width: 290px;
   }
+  .edit-user {
+    width: 290px;
+  }
   .auth-input {
     width: 280px;
   }
@@ -114,6 +126,9 @@ input:-webkit-autofill:active {
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
   #new_user {
+    width: 390px;
+  }
+  .edit-user {
     width: 390px;
   }
   .auth-input {
