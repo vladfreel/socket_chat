@@ -1,4 +1,11 @@
+require 'elasticsearch/model'
+
 class User < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  after_commit on: [:destroy] do
+    __elasticsearch__.delete_document ignore: 404
+  end
   mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
@@ -24,3 +31,4 @@ class User < ApplicationRecord
     username
   end
 end
+User.import
