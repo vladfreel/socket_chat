@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :home
   resources :chat_rooms, only: [:new, :create, :show, :index]
+  get 'search', to: 'chat_rooms#search'
   mount ActionCable.server => '/cable'
 
   root 'chat_rooms#index'
