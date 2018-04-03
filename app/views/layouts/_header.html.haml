@@ -11,6 +11,8 @@
         %ul.nav.navbar-nav
           %li
             = link_to 'Home', root_path, class: '', id: 'home-id'
+          %li
+            = link_to 'Search', search_path, class: '', id: 'home-id'
         %ul.nav.navbar-nav.navbar-right
           - if user_signed_in?
             %li

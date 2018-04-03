@@ -22,6 +22,14 @@ class ChatRoomsController < ApplicationController
     @message = Message.new
   end
 
+  def search
+    if params[:username].nil?
+      @users = []
+    else
+      @users = User.search params[:username]
+    end
+  end
+
   private
 
   def chat_room_params

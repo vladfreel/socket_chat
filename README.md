@@ -21,4 +21,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Installing ElasticSearch for user search
+Go to elasticsearch.org/download and download the DEB file.
+Once the file is local, type: sudo dpkg -i elasticsearch-VERSION.deb
+And start with : sudo service elasticsearch start
