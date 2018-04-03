@@ -23,7 +23,6 @@ class ChatRoomsController < ApplicationController
   end
 
   def search
-    puts '*'*100
     if params[:username].nil?
       @users = []
     else
