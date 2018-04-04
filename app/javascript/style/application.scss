@@ -1,0 +1,15 @@
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
+@import "auth";
+@import "header";
+@import "chat_room";
+@import "footer";
+@import "main";
+@import "scaffolds";
+@import "users";
+
+
+.test-class {
+  color: white;
+  font-size: xx-large;
+}

@@ -1,0 +1,190 @@
+.auth-head-text {
+  font-weight: bolder;
+  color: #424242;
+  margin-top: 75px;
+}
+
+#new_user {
+  text-align: center;
+  border-radius: 14px;
+  background-color: #337ab7;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+.edit-user {
+  text-align: center;
+  border-radius: 14px;
+  background-color: #337ab7;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+.auth-input {
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  background-color: #337ab7;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  border-bottom: 3px solid rgba(255, 255, 255, .3) !important;
+  transition:border-bottom 0.4s linear;
+}
+
+.auth-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+
+.auth-input::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+
+.auth-input:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+
+.auth-input:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
+
+#sign-up-username-input {
+  margin-top: 15px;
+}
+
+.auth-submit {
+  margin-top: 5px;
+  margin-bottom: 15px !important;
+  height: 40px;
+  font-weight: bolder !important;
+  font-size: large !important;
+}
+
+.pwd-tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  bottom: 36%;
+  left: 50%;
+  margin-left: -60px;
+  width: 160px;
+  background-color: #E0E0E0;
+  color: #616161;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0;
+  transition:opacity 0.4s linear;
+}
+
+input[id="sign-up-pwd-input"]:focus + .pwd-tooltip-text{
+  visibility: visible;
+  opacity:1;
+}
+
+input[class="auth-input"]:focus {
+  outline: none;
+  border-bottom: 3px solid rgba(255, 255, 255, .99) !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: inset 0 0 0px 9999px #337ab7 !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.auth-links {
+  margin-top: 10px;
+  font-size: 14pt;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  #new_user {
+    width: 290px;
+  }
+  .edit-user {
+    width: 290px;
+  }
+  .auth-input {
+    width: 280px;
+  }
+  .auth-submit {
+    width: 280px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  #new_user {
+    width: 390px;
+  }
+  .edit-user {
+    width: 390px;
+  }
+  .auth-input {
+    width: 380px;
+  }
+  .auth-submit {
+    width: 380px;
+  }
+}
+
+#login-input {
+  margin-top: 15px;
+}
+
+.remember-me {
+  color: white;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  width: 97%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  margin-bottom: 10px !important;
+  background-color: #EEE;
+
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.btn-file:hover {
+  background: #E0E0E0;
+}
+
+#p-sign-up-avatar {
+  margin-bottom: 0px !important;
+  font-weight: bolder;
+  font-size: large;
+}
+
+#p-profile-avatar {
+  margin-bottom: 0px !important;
+  font-weight: bolder;
+  font-size: large;
+}
