@@ -31,4 +31,4 @@ class User < ApplicationRecord
     username
   end
 end
-User.import
+#User.import
