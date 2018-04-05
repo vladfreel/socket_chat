@@ -650,39 +650,19 @@
 
       ],
       "/home/pupirev/RubymineProjects/socket_chat/spec/jobs/message_broadcast_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         null,
         null,
         null,
-        null
-      ],
-      "/home/pupirev/RubymineProjects/socket_chat/app/jobs/message_broadcast_job.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
         null,
         null,
         null,
-        1,
         null,
-        1,
-        0,
         null,
-        null
-      ],
-      "/home/pupirev/RubymineProjects/socket_chat/app/jobs/application_job.rb": [
-        1,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/home/pupirev/RubymineProjects/socket_chat/spec/models/chat_room_spec.rb": [
@@ -730,24 +710,6 @@
         1,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/home/pupirev/RubymineProjects/socket_chat/app/models/message.rb": [
@@ -765,6 +727,6 @@
         null
       ]
     },
-    "timestamp": 1522841006
+    "timestamp": 1522912333
   }
 }

@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-04T14:23:26+03:00">2018-04-04T14:23:26+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-05T10:12:13+03:00">2018-04-05T10:12:13+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">89.6%</span></span>
+    (<span class="covered_percent"><span class="yellow">89.1%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -31,10 +31,10 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>33</b> files in total.
-    <b>173</b> relevant lines. 
-    <span class="green"><b>155</b> lines covered</span> and
-    <span class="red"><b>18</b> lines missed </span>
+    <b>31</b> files in total.
+    <b>156</b> relevant lines. 
+    <span class="green"><b>139</b> lines covered</span> and
+    <span class="red"><b>17</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -98,26 +98,6 @@
         <td>1</td>
         <td>0</td>
         <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#d6091f1a6a2319b284f420d36fb117ceaace1678" class="src_link" title="app/jobs/application_job.rb">app/jobs/application_job.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#093df5fe8e71409827ed080d08ee1ab170b3fbc5" class="src_link" title="app/jobs/message_broadcast_job.rb">app/jobs/message_broadcast_job.rb</a></td>
-        <td class="yellow strong">85.71 %</td>
-        <td>14</td>
-        <td>7</td>
-        <td>6</td>
-        <td>1</td>
-        <td>0.9</td>
       </tr>
       
       <tr>
@@ -354,10 +334,10 @@
         <td class="strong"><a href="#1658e3f5518160e9b46e625f8b037454a8ef7bcd" class="src_link" title="spec/jobs/message_broadcast_spec.rb">spec/jobs/message_broadcast_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>14</td>
-        <td>9</td>
-        <td>9</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
       </tr>
       
       <tr>
@@ -373,7 +353,7 @@
       <tr>
         <td class="strong"><a href="#4d88deb179000ff4b652204ac4a690ed3d2f9fa5" class="src_link" title="spec/models/message_spec.rb">spec/models/message_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>42</td>
+        <td>24</td>
         <td>12</td>
         <td>12</td>
         <td>0</td>
@@ -823,140 +803,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="d6091f1a6a2319b284f420d36fb117ceaace1678">
-  <div class="header">
-    <h3>app/jobs/application_job.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>1</b> relevant lines. 
-      <span class="green"><b>1</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class ApplicationJob &lt; ActiveJob::Base</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="093df5fe8e71409827ed080d08ee1ab170b3fbc5">
-  <div class="header">
-    <h3>app/jobs/message_broadcast_job.rb</h3>
-    <h4><span class="yellow">85.71 %</span> covered</h4>
-    <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class MessageBroadcastJob &lt; ApplicationJob</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  queue_as :default</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def perform(message)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    ActionCable.server.broadcast &quot;chat_rooms_#{message.chat_room.id}_channel&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">                                 message: render_message(message)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def render_message(message)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">    MessagesController.render partial: &#39;messages/message&#39;, locals: {message: message}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -4739,8 +4585,8 @@
     <h3>spec/jobs/message_broadcast_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>9</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>0</b> relevant lines. 
+      <span class="green"><b>0</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4748,88 +4594,88 @@
   <pre>
     <ol>
       
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="1">
           
-          <code class="ruby">require &quot;rails_helper&quot;</code>
+          
+          <code class="ruby"># require &quot;rails_helper&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="3">
           
-          <code class="ruby">RSpec.describe MessageBroadcastJob, :type =&gt; :job do</code>
+          
+          <code class="ruby"># RSpec.describe MessageBroadcastJob, :type =&gt; :job do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">  describe &quot;#perform_later&quot; do</code>
+          
+          <code class="ruby">#   describe &quot;#perform_later&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="5">
           
-          <code class="ruby">    it &quot;uploads a backup&quot; do</code>
+          
+          <code class="ruby">#     it &quot;uploads a backup&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">      chat_room = ChatRoom.create(title: &#39;12345&#39;)</code>
+          
+          <code class="ruby">#       chat_room = ChatRoom.create(title: &#39;12345&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="7">
           
-          <code class="ruby">      message = Message.create(body: &#39;aaaa&#39;,chat_room_id: chat_room.id)</code>
+          
+          <code class="ruby">#       message = Message.create(body: &#39;aaaa&#39;,chat_room_id: chat_room.id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="8">
           
-          <code class="ruby">      ActiveJob::Base.queue_adapter = :test</code>
+          
+          <code class="ruby">#       ActiveJob::Base.queue_adapter = :test</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">      expect {</code>
+          
+          <code class="ruby">#       expect {</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="10">
           
-          <code class="ruby">        MessageBroadcastJob.perform_now(message)</code>
+          
+          <code class="ruby">#         MessageBroadcastJob.perform_now(message)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">      }.to have_enqueued_job</code>
+          <code class="ruby">#       }.to have_enqueued_job</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"># end</code>
         </li>
       
     </ol>
@@ -5081,114 +4927,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">  # it &quot;sets $foo on commit&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby">  #   $foo.should == nil</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  #   car.save!</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">  #   $foo.should == 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  #</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">  # describe &#39;#timestamp&#39; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">  #   it &#39;should validate presence&#39; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">  #     message = Message.create()</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">  #     message.body = &#39;&#39; # invalid state</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby">  #     record.valid? # run validations</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">  #     expect(record.errors[:name]).to include(&#39;Имя категории не может быть пустым&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">  #     record.name = &#39;cars&#39; # valid state</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">  #     record.valid? # run validations</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">  #     expect(record.errors[:name]).not_to include(&#39;Имя категории не может быть пустым&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">end</code>
