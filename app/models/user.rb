@@ -3,9 +3,6 @@ require 'elasticsearch/model'
 class User < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
-  after_commit on: [:destroy] do
-    __elasticsearch__.delete_document ignore: 404
-  end
   mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
@@ -27,8 +24,29 @@ class User < ApplicationRecord
       where(conditions.to_h).first
     end
   end
+
+  settings index: { number_of_shards: 1 } do
+    mappings dynamic: 'false' do
+      indexes :username, analyzer: 'english', index_options: 'offsets'
+    end
+  end
+
+  def self.search(query)
+    __elasticsearch__.search(
+        {
+            query: {
+                multi_match: {
+                    query: query,
+                    fields: ['username']
+                }
+            }
+        }
+    )
+  end
+
   def name
     username
   end
 end
-#User.import
+User.__elasticsearch__.create_index! force: true
+User.import(force: true)
