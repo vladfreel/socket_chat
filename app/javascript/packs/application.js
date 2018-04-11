@@ -13,6 +13,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme'
 import 'bootstrap/dist/js/bootstrap';
 import 'packs/sign_up'
+import 'packs/actioncable_connect'
 import 'style/application.scss'
+
 console.log('Hello World from Webpacker');
 
