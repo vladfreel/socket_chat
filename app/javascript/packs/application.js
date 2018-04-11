@@ -6,11 +6,11 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
-//= require rails-ujs
-//= require jquery
-//= require jquery_ujs
-//= require cable
-//= require turbolinks
-//= require bootstrap-sprockets
+
+import 'jquery/src/jquery'
+import 'jquery-ujs/src/rails'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme'
+import 'bootstrap/dist/js/bootstrap';
 import 'style/application.scss'
-console.log('Hello World from Webpacker')
+console.log('Hello World from Webpacker');
