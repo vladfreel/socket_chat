@@ -1801,6 +1801,16 @@ domain-browser@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
 
+dotenv-webpack@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/dotenv-webpack/-/dotenv-webpack-1.5.5.tgz#3441094f04d304b6119e6b72524e62fb3252f5f2"
+  dependencies:
+    dotenv "^5.0.1"
+
+dotenv@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
+
 duplexify@^3.4.2, duplexify@^3.5.3:
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-3.5.4.tgz#4bb46c1796eabebeec4ca9a2e66b808cb7a3d8b4"

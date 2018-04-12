@@ -14,9 +14,7 @@ $(document).ready(function(){
             channel: "ChatRoomsChannel",
             chat_room_id: messages.data('chat-room-id')
         }, {
-            connected: function() {
-                console.log('fadsfasdfasdfasd');
-            },
+            connected: function() {},
             disconnected: function() {},
             received: function(data) {
                 messages.append(data['message']);
