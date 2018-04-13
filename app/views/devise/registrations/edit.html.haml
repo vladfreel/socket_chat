@@ -23,6 +23,12 @@
               = f.password_field :password_confirmation, autocomplete: "off", class: 'auth-input', placeholder: 'Password Confirmation'
             .field
               = f.password_field :current_password, autocomplete: "off", class: 'auth-input', placeholder: 'Current Password'
+            .field
+              %span.btn.btn-file{id: 'avatar-profile-button'}
+                %p#p-profile-avatar
+                  %span
+                    Choose avatar
+                \#{f.file_field :avatar, id: 'avatar-profile'}
             .actions
               = f.submit 'Update', class: 'btn btn-default auth-submit'
           %p
