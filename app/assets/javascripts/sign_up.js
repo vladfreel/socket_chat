@@ -1,3 +1,7 @@
-// $( "#sign-up-pwd-input" ).focus(function() {
-//     console.log('TTT');
-// });
+document.addEventListener('turbolinks:load', function() {
+    $("#avatar-sign-up,#avatar-profile").change(function(e) {
+        var fileName;
+        fileName = e.target.files[0].name;
+        $("#p-sign-up-avatar,#p-profile-avatar").html(fileName);
+    });
+});

@@ -1,4 +1,9 @@
+require 'elasticsearch/model'
+
 class User < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
@@ -19,7 +24,29 @@ class User < ApplicationRecord
       where(conditions.to_h).first
     end
   end
+
+  settings index: { number_of_shards: 1 } do
+    mappings dynamic: 'false' do
+      indexes :username, analyzer: 'english', index_options: 'offsets'
+    end
+  end
+
+  def self.search(query)
+    __elasticsearch__.search(
+        {
+            query: {
+                multi_match: {
+                    query: query,
+                    fields: ['username']
+                }
+            }
+        }
+    )
+  end
+
   def name
     username
   end
 end
+User.__elasticsearch__.create_index! force: true
+User.import(force: true)
