@@ -8,12 +8,12 @@
       %th
 
   %tbody
-    - @private_chat_rooms.each do |private_chat_room|
+    - @rooms.each do |membership|
+      = membership.private_chat_room.id
       %tr
-        %td= link_to 'Show', private_chat_room
-        %td= link_to 'Edit', edit_private_chat_room_path(private_chat_room)
-        %td= link_to 'Destroy', private_chat_room, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to membership.owner.username, private_chat_room_path(membership.private_chat_room.id)
+        -#%td= link_to 'Edit', edit_private_chat_room_path(private_chat_room)
+        -#%td= link_to 'Destroy', private_chat_room, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Private chat room', new_private_chat_room_path
