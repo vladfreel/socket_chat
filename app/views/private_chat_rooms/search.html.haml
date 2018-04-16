@@ -17,10 +17,11 @@
                     = image_tag(asset_path("no_avatar.jpg"), class: "avatar")
                   - else
                     = image_tag(user.avatar.url, class: "avatar")
-                  = form_for :private_chat_room,html:{:action => "/private_chat_room", :method => "post"} do |f|
-                    = f.hidden_field :user, value: current_user.id
-                    = f.text_field :name, value: "#{current_user.username} #{user.username}"
-                    -#= f.fields_for :membership do |ff|
-                    -#  = f.hidden_field :owner, value: current_user.id
-                    -#  = f.hidden_field :member, value: user.id
-                    = f.submit user.username
+                  %button{onclick:"playTrack(#{user.to_json})" }
+                    = user.username
+                    = form_for @room do |f|
+                      = f.text_field :name, value: "#{current_user.username} #{user.username}"
+                      = f.fields_for :membership do |ff|
+                        = ff.hidden_field :owner_id, value: current_user.id
+                        = ff.hidden_field :member_id, value: user.id
+                      = f.submit user.username

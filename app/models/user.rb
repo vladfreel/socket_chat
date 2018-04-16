@@ -9,6 +9,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
 
   has_many :chat_rooms, dependent: :destroy
+  has_many :memberships
+  has_many :private_chat_rooms, through: :memberships
   has_many :messages, dependent: :destroy
 
   validates :username, presence: :true, uniqueness: { case_sensitive: false }

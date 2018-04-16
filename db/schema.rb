@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 20180416060227) do
   end
 
   create_table "memberships", force: :cascade do |t|
-    t.bigint "user_id"
     t.bigint "private_chat_room_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.bigint "owner_id"
+    t.bigint "member_id"
+    t.index ["member_id"], name: "index_memberships_on_member_id"
+    t.index ["owner_id"], name: "index_memberships_on_owner_id"
     t.index ["private_chat_room_id"], name: "index_memberships_on_private_chat_room_id"
-    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -80,7 +80,8 @@ ActiveRecord::Schema.define(version: 20180416060227) do
 
   add_foreign_key "chat_rooms", "users"
   add_foreign_key "memberships", "private_chat_rooms"
-  add_foreign_key "memberships", "users"
+  add_foreign_key "memberships", "users", column: "member_id"
+  add_foreign_key "memberships", "users", column: "owner_id"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "private_messages", "private_chat_rooms"
