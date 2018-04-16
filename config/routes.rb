@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :memberships
   devise_for :users
   resources :users
   resources :home
   resources :chat_rooms, only: [:new, :create, :show, :index]
+  resources :private_chat_rooms, except: [:update, :edit, :destroy] do
+    resources :memberships, only: [:index, :create]
+  end
   get 'search', to: 'chat_rooms#search'
   mount ActionCable.server => '/cable'
 
