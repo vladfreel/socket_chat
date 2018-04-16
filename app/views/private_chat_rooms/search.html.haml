@@ -17,4 +17,10 @@
                     = image_tag(asset_path("no_avatar.jpg"), class: "avatar")
                   - else
                     = image_tag(user.avatar.url, class: "avatar")
-                  = link_to user.username, id: user.id
+                  = form_for :private_chat_room,html:{:action => "/private_chat_room", :method => "post"} do |f|
+                    = f.hidden_field :user, value: current_user.id
+                    = f.text_field :name, value: "#{current_user.username} #{user.username}"
+                    -#= f.fields_for :membership do |ff|
+                    -#  = f.hidden_field :owner, value: current_user.id
+                    -#  = f.hidden_field :member, value: user.id
+                    = f.submit user.username
