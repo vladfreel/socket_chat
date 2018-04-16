@@ -1,0 +1,19 @@
+%h1 Listing private_chat_rooms
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @private_chat_rooms.each do |private_chat_room|
+      %tr
+        %td= link_to 'Show', private_chat_room
+        %td= link_to 'Edit', edit_private_chat_room_path(private_chat_room)
+        %td= link_to 'Destroy', private_chat_room, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Private chat room', new_private_chat_room_path
