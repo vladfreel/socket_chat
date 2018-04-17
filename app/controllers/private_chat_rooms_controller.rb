@@ -5,15 +5,12 @@ class PrivateChatRoomsController < ApplicationController
   end
 
   def show
-    @private_chat_room = PrivateChatRoom.find(params[:id])
-    @owner = @private_chat_room.membership.owner
-
-    # @member = @private_chat_room.membership.member
+    @private_chat_room = PrivateChatRoom.includes(:private_messages).find(params[:id])
+    @message = PrivateMessage.new
   end
 
   def index
-    @rooms_owner = Membership.where(owner_id: current_user.id)
-    @rooms_member = Membership.where(member_id: current_user.id)
+    @rooms = Membership.where(owner_id: current_user.id).or(Membership.where(member_id: current_user.id))
     @room = PrivateChatRoom.new
   end
 
