@@ -7,11 +7,13 @@ class PrivateChatRoomsController < ApplicationController
   def show
     @private_chat_room = PrivateChatRoom.find(params[:id])
     @owner = @private_chat_room.membership.owner
+
     # @member = @private_chat_room.membership.member
   end
 
   def index
-    @rooms = Membership.where(owner_id: current_user.id)
+    @rooms_owner = Membership.where(owner_id: current_user.id)
+    @rooms_member = Membership.where(member_id: current_user.id)
     @room = PrivateChatRoom.new
   end
 
