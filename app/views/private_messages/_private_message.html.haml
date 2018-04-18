@@ -1,0 +1,11 @@
+.card
+  .card-block
+    .row
+      .col-md-1
+      .col-md-11
+        %p.card-text
+          %span.text-muted
+            = private_message.user.username
+            at #{private_message.timestamp} says
+          %br/
+          = private_message.content

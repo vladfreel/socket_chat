@@ -1,7 +1,11 @@
-%p#notice= notice
-= @owner.username
--#= @member
-
--#= link_to 'Edit', edit_private_chat_room_path(@private_chat_room)
--#\|
--#= link_to 'Back', private_chat_rooms_path
+%h1= @private_chat_room.name
+#private_messages{"data-private-chat-room-id" => "#{@private_chat_room.id}"}
+  = render @private_chat_room.private_messages
+%hr/
+= form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
+  = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
+  .form-group
+    = f.label :content
+    = f.text_area :content, class: 'form-control'
+    %small.text-muted From 2 to 1000 characters
+  = f.submit "Post", class: 'btn btn-primary btn-lg'

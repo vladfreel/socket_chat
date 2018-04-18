@@ -1,4 +1,4 @@
-%h1 Listing private_chat_rooms
+%h1 Сообщения
 
 %table
   %thead
@@ -9,9 +9,11 @@
 
   %tbody
     - @rooms.each do |membership|
-      = membership.private_chat_room.id
       %tr
-        %td= link_to membership.owner.username, private_chat_room_path(membership.private_chat_room.id)
+        - if current_user.id == membership.member.id
+          %td= link_to membership.owner.username, private_chat_room_path(membership.private_chat_room.id)
+        - else
+          %td= link_to membership.member.username, private_chat_room_path(membership.private_chat_room.id)
         -#%td= link_to 'Edit', edit_private_chat_room_path(private_chat_room)
         -#%td= link_to 'Destroy', private_chat_room, method: :delete, data: { confirm: 'Are you sure?' }
 
