@@ -9,11 +9,22 @@
 
 .company-name {
   color: white;
-  font-weight: bolder;
+  font-weight: 300;
+  font-size: x-large;
+  border-right: solid white thin;
+  font-family: 'Kreon', serif;
 }
 
 .navbar-toggle {
   .icon-bar {
     background-color: white;
   }
+}
+
+.header-menu-item {
+  font-family: 'Kreon', serif;
+}
+
+.header-menu-item:hover {
+  background-color: #3e4551 !important;
 }
