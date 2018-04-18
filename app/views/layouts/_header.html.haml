@@ -1,40 +1,39 @@
-%header
-  %nav.navbar.navbar-fixed-top.header-main-navbar
-    .container-fluid
-      .navbar-header
-        .navbar-brand.company-name
-          %i.fa.fa-comment
-          Socket Chat
-        %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-      #navbar.collapse.navbar-collapse
-        %ul.nav.navbar-nav
+%nav.navbar.navbar-fixed-top.header-main-navbar
+  .container-fluid
+    .navbar-header
+      .navbar-brand.company-name
+        %i.fa.fa-comment
+        Socket Chat
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Public chats', root_path, class: 'header-menu-item', id: 'home-id'
+        %li
+          = link_to 'Search', search_path, class: 'header-menu-item', id: 'home-id'
+        %li
+          = link_to 'Messages', private_chat_rooms_path, class: 'header-menu-item', id: 'home-id'
+        %li
+          = link_to 'Private chats', search_path, class: 'header-menu-item', id: 'home-id'
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
           %li
-            = link_to 'Public chats', root_path, class: 'header-menu-item', id: 'home-id'
+            = link_to edit_user_registration_path, class: 'header-menu-item', id: 'header-profile' do
+              %i.glyphicon.glyphicon-user
+              Profile
           %li
-            = link_to 'Search', search_path, class: 'header-menu-item', id: 'home-id'
+            = link_to destroy_user_session_path, method: :delete, class: 'header-menu-item', id: 'header-logout' do
+              %i.glyphicon.glyphicon-log-out
+              Logout
+        - else
           %li
-            = link_to 'Messages', private_chat_rooms_path, class: 'header-menu-item', id: 'home-id'
+            = link_to new_user_registration_path, class: 'header-menu-item', id: 'header-sign-up' do
+              %i.glyphicon.glyphicon-user
+              Sign Up
           %li
-            = link_to 'Private chats', search_path, class: 'header-menu-item', id: 'home-id'
-        %ul.nav.navbar-nav.navbar-right
-          - if user_signed_in?
-            %li
-              = link_to edit_user_registration_path, class: 'header-menu-item', id: 'header-profile' do
-                %i.glyphicon.glyphicon-user
-                Profile
-            %li
-              = link_to destroy_user_session_path, method: :delete, class: 'header-menu-item', id: 'header-logout' do
-                %i.glyphicon.glyphicon-log-out
-                Logout
-          - else
-            %li
-              = link_to new_user_registration_path, class: 'header-menu-item', id: 'header-sign-up' do
-                %i.glyphicon.glyphicon-user
-                Sign Up
-            %li
-              = link_to new_user_session_path, class: 'header-menu-item', id: 'header-login' do
-                %i.glyphicon.glyphicon-log-in
-                Login
+            = link_to new_user_session_path, class: 'header-menu-item', id: 'header-login' do
+              %i.glyphicon.glyphicon-log-in
+              Login
