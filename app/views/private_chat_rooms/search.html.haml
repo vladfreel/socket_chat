@@ -17,11 +17,10 @@
                     = image_tag(asset_path("no_avatar.jpg"), class: "avatar")
                   - else
                     = image_tag(user.avatar.url, class: "avatar")
-                  %button{onclick:"playTrack(#{user.to_json})" }
-                    = user.username
-                    = form_for @room do |f|
-                      = f.text_field :name, value: "#{current_user.username} #{user.username}"
-                      = f.fields_for :membership do |ff|
-                        = ff.hidden_field :owner_id, value: current_user.id
-                        = ff.hidden_field :member_id, value: user.id
-                      = f.submit user.username
+                  = user.username
+                  = form_for @room do |f|
+                    = f.text_field :name, value: "#{current_user.username} #{user.username}"
+                    = f.fields_for :membership do |ff|
+                      = ff.hidden_field :owner_id, value: current_user.id
+                      = ff.hidden_field :member_id, value: user.id
+                    = f.submit user.username
