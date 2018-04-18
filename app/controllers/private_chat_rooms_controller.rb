@@ -10,11 +10,9 @@ class PrivateChatRoomsController < ApplicationController
   end
 
   def create
-    check_owner = PrivateChatRoom.check_owner_private_chat(params[:private_chat_room][:membership_attributes][:owner_id],
-                                                 params[:private_chat_room][:membership_attributes][:member_id])
-    check_member = PrivateChatRoom.check_member_private_chat(params[:private_chat_room][:membership_attributes][:owner_id],
-                                                   params[:private_chat_room][:membership_attributes][:member_id])
-    if check_owner.nil? && check_member.nil?
+    check = PrivateChatRoom.check_private_chat(params[:private_chat_room][:membership_attributes][:owner_id],
+                                               params[:private_chat_room][:membership_attributes][:member_id])
+    if check.nil?
       @room = PrivateChatRoom.new(private_chat_room_params)
       if @room.save
         redirect_to private_chat_room_path(@room)
@@ -23,11 +21,7 @@ class PrivateChatRoomsController < ApplicationController
         redirect_to private_chat_rooms_path
       end
     else
-      if check_owner.nil?
-        redirect_to private_chat_room_path(check_member.private_chat_room.id)
-      else
-        redirect_to private_chat_room_path(check_owner.private_chat_room.id)
-      end
+        redirect_to private_chat_room_path(check.private_chat_room.id)
     end
   end
 

@@ -6,10 +6,12 @@ class PrivateChatRoom < ApplicationRecord
   has_many :private_messages, dependent: :destroy
   validates :name, presence: true, length: { maximum: 30}, uniqueness: true
 
-  def self.check_owner_private_chat(owner, member)
-    Membership.find_by(owner_id: owner, member_id: member)
-  end
-  def self.check_member_private_chat(owner, member)
-    Membership.find_by(owner_id: member, member_id: owner)
+  def self.check_private_chat(owner, member)
+    membership = Membership.find_by(owner_id: owner, member_id: member)
+    if membership.nil?
+      Membership.find_by(owner_id: member, member_id: owner)
+    else
+      membership
+    end
   end
 end
