@@ -25,7 +25,7 @@ class PrivateChatRoomsController < ApplicationController
   end
 
   def search
-    if params[:username].nil?
+    if params[:username].nil? || params[:username] == current_user.username
       @users = []
     else
       @users = User.search params[:username]
