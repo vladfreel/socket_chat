@@ -3,6 +3,44 @@ ActionCable = require('actioncable')
 var cable = ActionCable.createConsumer('ws://localhost:3000/cable')
 
 $(document).ready(function(){
+    var private_messages, private_messages_to_bottom;
+    private_messages = $('#private_messages');
+    if ($('#private_messages').length > 0) {
+        private_messages_to_bottom = function() {
+            return private_messages.scrollTop(private_messages.prop("scrollHeight"));
+        };
+        private_messages_to_bottom();
+        appPrivateChat = cable.subscriptions.create({
+            channel: "PrivateChatRoomsChannel",
+            private_chat_room_id: private_messages.data('private-chat-room-id')
+        }, {
+            connected: function() {},
+            disconnected: function() {},
+            received: function(data) {
+                private_messages.append(data['private_message']);
+                return private_messages_to_bottom();
+            },
+            send_private_message: function(private_message, private_chat_room_id) {
+                return this.perform('send_private_message', {
+                    private_message: private_message,
+                    private_chat_room_id: private_chat_room_id
+                });
+            }
+        });
+        return $('#private_new_message').submit(function(e) {
+            var $this, textarea;
+            $this = $(this);
+            textarea = $this.find('#private_message_content');
+            if ($.trim(textarea.val()).length > 1) {
+                appPrivateChat.send_private_message(textarea.val(), private_messages.data('private-chat-room-id'));
+                textarea.val('');
+            }
+            e.preventDefault();
+            return false;
+        });
+    }
+
+    ///////////////////////
     var messages, messages_to_bottom;
     messages = $('#messages');
     if ($('#messages').length > 0) {
