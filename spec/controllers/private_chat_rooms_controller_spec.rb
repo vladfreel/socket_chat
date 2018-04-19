@@ -34,5 +34,8 @@ RSpec.describe PrivateChatRoomsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
-
+    it 'has created new candidate' do
+      get :search, params: { username: @user2.username }
+      expect(response).to render_template(:search)
+    end
 end

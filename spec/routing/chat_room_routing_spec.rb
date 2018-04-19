@@ -17,5 +17,4 @@ RSpec.describe 'routes for Chat room', type: :routing do
     expect(post: '/chat_rooms').to route_to(controller: 'chat_rooms',
                                             action: 'create')
   end
-
 end

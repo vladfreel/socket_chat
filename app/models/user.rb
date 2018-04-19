@@ -52,4 +52,4 @@ class User < ApplicationRecord
   end
 end
 User.__elasticsearch__.create_index! force: true
-# User.import(force: true)
+User.import(force: true)

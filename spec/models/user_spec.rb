@@ -19,6 +19,13 @@ RSpec.describe User, type: :model do
     expect(subject).to validate_presence_of(:username)
   end
   it { is_expected.to allow_value("vladfree").for(:username) }
+
   it { is_expected.to_not allow_value("./,91$32").for(:username) }
 
+  it 'SEARCH' do
+    user = create(:user)
+    user.__elasticsearch__.index_document
+    User.__elasticsearch__.refresh_index! # Manually refresh the index instead of waiting
+    expect(User.search(user.username).results.map(&:_id)).to include(user.id.to_s)
+  end
 end
