@@ -30,6 +30,9 @@ RSpec.describe PrivateChatRoom, type: :model do
       record.name = '' # invalid state
       record.valid? # run validations
       expect(record.errors[:name]).to include("can't be blank")
+      record.name = '****************************************************************************************'
+      record.valid? # run validations
+      expect(record.errors[:name]).to include("is too long (maximum is 30 characters)")
       record.name = 'cars' # valid state
       record.valid? # run validations
       expect(record.errors[:name]).not_to include("can't be blank")

@@ -15,7 +15,8 @@ class User < ApplicationRecord
   has_many :private_messages, dependent: :destroy
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
-
+  validates :email, presence: true
+  validates :encrypted_password, presence: true, length: { minimum: 6 }
   attr_accessor :login
 
   def self.find_for_database_authentication(warden_conditions)
@@ -51,4 +52,4 @@ class User < ApplicationRecord
   end
 end
 User.__elasticsearch__.create_index! force: true
-User.import(force: true)
+# User.import(force: true)
