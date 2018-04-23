@@ -4,5 +4,5 @@ class MultiUserPrivateChatRoom < ApplicationRecord
   belongs_to :user
   has_many :users, through: :multi_user_memberships
   accepts_nested_attributes_for :multi_user_memberships
-  validates :name, presence: true, length: { maximum: 10}, uniqueness: true
+  validates :name, presence: true, length: { maximum: 20}, uniqueness: true
 end

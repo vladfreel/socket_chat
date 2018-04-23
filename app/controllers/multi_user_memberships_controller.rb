@@ -9,6 +9,12 @@ class MultiUserMembershipsController < ApplicationController
       redirect_to multi_user_private_chat_room_path(membership.multi_user_private_chat_room.id)
     end
   end
+
+  def destroy
+    membership = MultiUserMembership.find(params[:id])
+    membership.destroy
+    redirect_to multi_user_private_chat_room_path(membership.multi_user_private_chat_room.id)
+  end
   private
 
   def multi_user_membership_params
