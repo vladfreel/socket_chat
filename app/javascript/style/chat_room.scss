@@ -18,10 +18,76 @@
 
 .chat-messages-col {
   height: 100%;
+  width: 100%;
+  background-color: black;
 }
 
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 768px) and (max-width: 778px) {
+  .chat-menu-col {
+    width: 223px;
+  }
+
+  .chat-messages-col {
+    left: 223px;
+    position: absolute;
+    right: 0;
+
+  }
+}
+
+@media only screen and (min-width : 778px) {
   .chat-menu-col {
     width: 235px;
   }
+
+  .chat-messages-col {
+    left: 235px;
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .chat-menu-col {
+    visibility: collapse;
+  }
+
+  .chat-messages-col {
+    margin-left: 0px;
+  }
+}
+
+.left-chat-menu-section {
+  color: white;
+  font-size: 16pt;
+  font-weight: bolder;
+}
+
+.left-chat-menu-member {
+  color: white;
+  font-size: 14pt;
+  margin-bottom: 5px;
+}
+
+.chat-messages-container {
+  width: 100%;
+  height: 93%;
+}
+
+.chat-send-form-container {
+  width: 100%;
+  height: 7%;
+  background-color: #1b6d85;
+}
+
+#private_new_message {
+  width: 100%;
+}
+
+.private-message-text-area {
+  width: 90%;
+}
+
+.btn-send-message {
+
 }

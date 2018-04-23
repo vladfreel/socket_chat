@@ -1,7 +1,20 @@
 .container-fluid.main-chat-container
   .row.main-chat-row
-    .hidden-xs.col-sm-12.col-md-12.chat-menu-col
-    .col-xs-12.col-sm-12.chat-messages-col
+    .chat-menu-col
+      %p.left-chat-menu-section Room members:
+      .left-chat-menu-member
+        =@private_chat_room.membership.owner.name
+      .left-chat-menu-member
+        =@private_chat_room.membership.member.name
+    .chat-messages-col
+      .chat-messages-container
+      .chat-send-form-container
+        = form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
+          = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
+          .form-group
+            = f.text_area :content, class: 'private-message-text-area'
+          = f.submit "Post", class: 'btn btn-primary btn-send-message'
+
 
 
   -#%h1= @private_chat_room.name
