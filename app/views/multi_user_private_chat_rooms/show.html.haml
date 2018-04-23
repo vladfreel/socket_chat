@@ -1,0 +1,28 @@
+
+%h4 current members
+%ul#member-list
+  - @membership.each do |member|
+    %li= member.name
+- if current_user == @chat_room.user
+  %h1 Users Search
+  = form_for multi_user_private_chat_room_path(id: @chat_room.id), method: :get do |f|
+    %p
+      = text_field_tag :username, params[:username],class: 'form-control'
+      %br
+      = submit_tag 'Search', name: nil, class: 'btn btn-primary'
+  %ul
+    - unless @users.nil?
+      - @users.each do |user|
+        %li
+          %h3
+            - if user.avatar.url.nil?
+              = image_tag(asset_path("no_avatar.jpg"), class: "avatar")
+            - else
+              = image_tag(user.avatar.url, class: "avatar")
+            = user.username
+            = form_for @membership do |f|
+              = f.hidden_field :multi_user_private_chat_room_id, value: @chat_room.id
+              = f.hidden_field :user_id, value: user.id
+              = f.submit user.username
+
+= link_to 'Back', multi_user_private_chat_rooms_path

@@ -3,7 +3,10 @@
     .row
       .col-xs-12
         %h1 Users Search
-        = form_for search_user_path, method: :get do |f|
+        - p '*'*100
+        - p @chat_room.id
+        - p '*'*100
+        = form_for search_multi_user_path(id: @chat_room.id), method: :get do |f|
           %p
             = text_field_tag :username, params[:username],class: 'form-control'
             %br
@@ -18,9 +21,7 @@
                   - else
                     = image_tag(user.avatar.url, class: "avatar")
                   = user.username
-                  = form_for @room do |f|
-                    = f.text_field :name, value: "#{current_user.username} #{user.username}"
-                    = f.fields_for :membership do |ff|
-                      = ff.hidden_field :owner_id, value: current_user.id
-                      = ff.hidden_field :member_id, value: user.id
+                  = form_for @membership do |f|
+                    = f.hidden_field :multi_user_private_chat_room_id, value: @chat_room.id
+                    = f.hidden_field :user_id, value: user.id
                     = f.submit user.username

@@ -1,0 +1,21 @@
+%h1 Multi-user private chats
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @rooms.each do |membership|
+      %tr
+        %td= link_to membership.multi_user_private_chat_room.name, multi_user_private_chat_room_path(membership.multi_user_private_chat_room.id)
+    - @rooms_owner.each do |membership|
+      %tr
+        %td= link_to membership.name, multi_user_private_chat_room_path(membership.id)
+    %br
+
+%br
+
+= link_to 'New Multi user private chat room', new_multi_user_private_chat_room_path
