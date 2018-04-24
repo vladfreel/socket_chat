@@ -1,11 +1,12 @@
 .container-fluid
-  .row
-    .col-xs-2.col-sm-3.col-md-3.col-lg-3
-    .col-xs-10.col-sm-9.col-md-9.col-lg-9
+  .row.chat-msg-row
+    .col-xs-2.col-sm-1.col-md-1.col-lg-1
+    .col-xs-10.col-sm-11.col-md-11.col-lg-11
       .row.message-user-data-row
-        .col-xs-6
+        .col-xs-6.col-chat-msg-user-name
           = private_message.user.name
-        .col-xs-6
+        .col-xs-6.col-chat-msg-date
+          %i.fa.fa-clock-o
           = private_message.timestamp
       .row.message-text-row
         .col-xs-12.message-text-col
