@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :multi_user_private_chat_rooms
   resources :multi_user_memberships
   get 'search', to: 'private_chat_rooms#search'
-  # get 'search_multi_user', to: 'multi_user_private_chat_rooms#search'
   mount ActionCable.server => '/cable'
   root 'chat_rooms#index'
 end

@@ -2,6 +2,8 @@
   .container
     .row
       .col-xs-12
+        %h1
+          = @multi_chat_room.name
         %h4 owner
         %li= @multi_chat_room.user.username
         %h4 current members
