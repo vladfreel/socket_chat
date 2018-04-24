@@ -1,7 +1,16 @@
+html {
+  height: 100%;
+}
+
 body {
-  padding-top: 70px;
+  padding-top: 50px;
+  height: 100%;
 }
 
 .website-content {
-  min-height: 85vh;
+  height: 85%;
+}
+
+.main-chat-container {
+  height: 100%;
 }
