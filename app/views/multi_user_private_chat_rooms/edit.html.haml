@@ -1,0 +1,13 @@
+.website-content
+  .container
+    .row
+      .col-xs-12
+        = form_for @chat_room, method: :put  do |f|
+          = f.text_field :name
+          = f.submit 'Update'
+        %h4 current members
+        - @users.each do |member|
+          = member.user.username
+          = button_to 'Delete from chat', [member],  method: :delete
+        = link_to 'Back', multi_user_private_chat_rooms_path
+
