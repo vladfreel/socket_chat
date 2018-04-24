@@ -11,7 +11,8 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     -#= javascript_pack_tag 'application'
     -#= stylesheet_pack_tag 'application'
+    %link{:href => "https://fonts.googleapis.com/css?family=Kreon", :rel => "stylesheet"}/
   %body
     = render 'layouts/header'
     = yield
-    = render 'layouts/footer'
+    = render 'layouts/footer' unless no_footer_page(controller.controller_name, controller.action_name)
