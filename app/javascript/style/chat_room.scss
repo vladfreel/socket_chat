@@ -14,11 +14,11 @@
 .chat-menu-col {
   height: 100%;
   background-color: #3e4551;
+  float: left;
 }
 
 .chat-messages-col {
   height: 100%;
-  width: 100%;
   background-color: black;
 }
 
@@ -31,7 +31,6 @@
     left: 223px;
     position: absolute;
     right: 0;
-
   }
 }
 
@@ -44,6 +43,7 @@
     left: 235px;
     position: absolute;
     right: 0;
+    bottom: 0;
   }
 }
 
@@ -53,7 +53,10 @@
   }
 
   .chat-messages-col {
-    margin-left: 0px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 
@@ -71,23 +74,34 @@
 
 .chat-messages-container {
   width: 100%;
-  height: 93%;
+  height: 92%;
 }
 
 .chat-send-form-container {
   width: 100%;
-  height: 7%;
-  background-color: #1b6d85;
+  height: 8%;
+  background-color: #f5f5f5;
 }
 
 #private_new_message {
-  width: 100%;
+  //width: 100%;
 }
 
 .private-message-text-area {
-  width: 90%;
+  width: 70%;
+  float: left;
 }
 
 .btn-send-message {
+  width: 60px;
+  float: left;
+}
 
+.private-chat-input-group {
+
+}
+
+.btn-private-chat-send {
+  width: 100%;
+  height: 100%;
 }

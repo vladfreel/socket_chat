@@ -8,12 +8,18 @@
         =@private_chat_room.membership.member.name
     .chat-messages-col
       .chat-messages-container
+        -#= render @private_chat_room.private_messages
       .chat-send-form-container
         = form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
           = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
-          .form-group
-            = f.text_area :content, class: 'private-message-text-area'
-          = f.submit "Post", class: 'btn btn-primary btn-send-message'
+          .input-group
+            = f.text_area :content, class: 'form-control custom-control', html: {:rows => "2", :style => "resize:none"}
+            %span.input-group-addon.btn.btn-primary
+              = f.submit 'Send', class: 'btn-send-message btn-private-chat-send btn btn-primary'
+        -#= form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
+        -#  = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
+        -#  = f.text_area :content, class: 'private-message-text-area'
+        -#  = f.submit "Post", class: 'btn btn-primary btn-send-message'
 
 
 
