@@ -1,6 +1,6 @@
 ActionCable = require('actioncable')
 
-var cable = ActionCable.createConsumer('ws://localhost:3000/cable')
+var cable = ActionCable.createConsumer('wss://localhost:3000/cable')
 
 $(document).ready(function(){
 
