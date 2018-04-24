@@ -1,9 +1,5 @@
 class PrivateChatRoomsController < ApplicationController
 
-  def new
-    @room = PrivateChatRoom.new
-  end
-
   def show
     @private_chat_room = PrivateChatRoom.includes(:private_messages).find(params[:id])
     @message = PrivateMessage.new
@@ -11,16 +7,21 @@ class PrivateChatRoomsController < ApplicationController
 
   def index
     @rooms = Membership.where(owner_id: current_user.id).or(Membership.where(member_id: current_user.id))
-    @room = PrivateChatRoom.new
   end
 
   def create
-    @room = PrivateChatRoom.new(private_chat_room_params)
-    if @room.save
-      redirect_to private_chat_room_path(@room)
+    check = PrivateChatRoom.check_private_chat(params[:private_chat_room][:membership_attributes][:owner_id],
+                                               params[:private_chat_room][:membership_attributes][:member_id])
+    if check.nil?
+      @room = PrivateChatRoom.new(private_chat_room_params)
+      if @room.save
+        redirect_to private_chat_room_path(@room)
+      else
+        flash[:error] = @room.errors.full_messages.to_sentence
+        redirect_to private_chat_rooms_path
+      end
     else
-      flash[:error] = @room.errors.full_messages.to_sentence
-      redirect_to private_chat_rooms_path
+        redirect_to private_chat_room_path(check.private_chat_room.id)
     end
   end
 
@@ -39,4 +40,5 @@ class PrivateChatRoomsController < ApplicationController
   def private_chat_room_params
     params.require(:private_chat_room).permit(:name, membership_attributes: [:owner_id, :member_id])
   end
+
 end
