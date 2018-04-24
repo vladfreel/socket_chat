@@ -1,0 +1,2 @@
+module MultiUserMessagesHelper
+end

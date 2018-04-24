@@ -1,0 +1,11 @@
+.card
+  .card-block
+    .row
+      .col-md-1
+      .col-md-11
+        %p.card-text
+          %span.text-muted
+            = multi_user_message.user.username
+            at #{multi_user_message.timestamp} says
+          %br/
+          = multi_user_message.content

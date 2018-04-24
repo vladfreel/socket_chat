@@ -3,6 +3,45 @@ ActionCable = require('actioncable')
 var cable = ActionCable.createConsumer('ws://localhost:3000/cable')
 
 $(document).ready(function(){
+
+    var multi_user_messages, multi_user_messages_to_bottom;
+    multi_user_messages = $('#multi_user_messages');
+    if ($('#multi_user_messages').length > 0) {
+        multi_user_messages_to_bottom = function() {
+            return multi_user_messages.scrollTop(multi_user_messages.prop("scrollHeight"));
+        };
+        multi_user_messages_to_bottom();
+        appMultiUserPrivateChat = cable.subscriptions.create({
+            channel: "MultiUserPrivateChatRoomsChannel",
+            multi_user_private_chat_room_id: multi_user_messages.data('multi-user-private-chat-room-id')
+
+        }, {
+            connected: function() {},
+            disconnected: function() {},
+            received: function(data) {
+                multi_user_messages.append(data['multi_user_message']);
+                return multi_user_messages_to_bottom();
+            },
+            send_multi_user_message: function(multi_user_message, multi_user_private_chat_room_id) {
+                return this.perform('send_multi_user_message', {
+                    multi_user_message: multi_user_message,
+                    multi_user_private_chat_room_id: multi_user_private_chat_room_id
+                });
+            }
+        });
+        return $('#multi_user_new_message').submit(function(e) {
+            var $this, textarea;
+            $this = $(this);
+            textarea = $this.find('#multi_user_message_content');
+            if ($.trim(textarea.val()).length > 1) {
+                appMultiUserPrivateChat.send_multi_user_message(textarea.val(), multi_user_messages.data('multi-user-private-chat-room-id'));
+                textarea.val('');
+            }
+            e.preventDefault();
+            return false;
+        });
+    }
+    //////////////////////////////////
     var private_messages, private_messages_to_bottom;
     private_messages = $('#private_messages');
     if ($('#private_messages').length > 0) {
@@ -78,3 +117,10 @@ $(document).ready(function(){
         });
     }
 });
+
+
+
+
+
+
+

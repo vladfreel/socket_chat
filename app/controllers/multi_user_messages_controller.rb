@@ -1,0 +1,2 @@
+class MultiUserMessagesController < ApplicationController
+end
