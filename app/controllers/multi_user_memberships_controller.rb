@@ -6,7 +6,7 @@ class MultiUserMembershipsController < ApplicationController
       flash[:success] = 'Chat room added!'
       redirect_to multi_user_private_chat_room_path(membership.multi_user_private_chat_room.id)
     else
-      redirect_to multi_user_private_chat_room_path(membership.multi_user_private_chat_room.id)
+      redirect_to multi_user_private_chat_rooms_path
     end
   end
 

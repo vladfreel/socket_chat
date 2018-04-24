@@ -1,5 +1,5 @@
 class MultiUserPrivateChatRoomsController < ApplicationController
-  before_action :find_room, only: [:edit, :show, :update]
+  before_action :find_room, only: %i[ show edit update ]
 
   def new
     @multi_user_private_chat_room = MultiUserPrivateChatRoom.new
