@@ -3,7 +3,7 @@
     .row
       .col-xs-12
         %h1 Users Search
-        = form_for search_user_path, method: :get do |f|
+        = form_for search_path, method: :get do |f|
           %p
             = text_field_tag :username, params[:username],class: 'form-control'
             %br
