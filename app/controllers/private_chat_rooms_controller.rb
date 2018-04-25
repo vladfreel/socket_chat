@@ -3,6 +3,7 @@ class PrivateChatRoomsController < ApplicationController
   def show
     @private_chat_room = PrivateChatRoom.includes(:private_messages).find(params[:id])
     @message = PrivateMessage.new
+    authorize @private_chat_room
   end
 
   def index
@@ -14,6 +15,7 @@ class PrivateChatRoomsController < ApplicationController
                                                params[:private_chat_room][:membership_attributes][:member_id])
     if check.nil?
       @room = PrivateChatRoom.new(private_chat_room_params)
+      authorize @room
       if @room.save
         redirect_to private_chat_room_path(@room)
       else
@@ -32,6 +34,7 @@ class PrivateChatRoomsController < ApplicationController
       @users = User.search params[:username]
     end
     @room = PrivateChatRoom.new
+    authorize @room
     @room.build_membership
   end
 
