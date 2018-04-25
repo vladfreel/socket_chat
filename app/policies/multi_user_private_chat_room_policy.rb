@@ -20,7 +20,8 @@ class MultiUserPrivateChatRoomPolicy < ApplicationPolicy
   end
 
   def show?
-    return true if user.present? && user == multi_user_private_chat_room.users.find_by(id: user.id)
+    return true if user.present? && user == multi_user_private_chat_room.users.find_by(id: user.id) ||
+        user == multi_user_private_chat_room.user
   end
 
   private
