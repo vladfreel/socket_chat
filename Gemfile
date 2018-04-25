@@ -45,6 +45,7 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'webpacker', '~> 3.4'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'pundit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
