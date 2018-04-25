@@ -1,6 +1,7 @@
 .container-fluid.main-chat-container
   .row.main-chat-row
     .chat-menu-col
+      %h1= @private_chat_room.name
       %p.left-chat-menu-section Room members:
       .left-chat-menu-member
         =@private_chat_room.membership.owner.name
@@ -23,7 +24,7 @@
 
 
 
-  -#%h1= @private_chat_room.name
+
   -##private_messages{"data-private-chat-room-id" => "#{@private_chat_room.id}"}
   -#  = render @private_chat_room.private_messages
   -#%hr/
