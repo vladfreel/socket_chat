@@ -42,10 +42,34 @@
   margin-top: 6px;
 }
 
+.chat-msg-row {
+  border-bottom: 1px dotted #B3A9A9;
+}
+
 .private-message-text-area {
   height: 34px !important;
   resize: none;
+}
 
+.message-user-data-row {
+  padding-top: 15px;
+}
+
+.col-chat-msg-user-name {
+  color: black;
+  font-weight: bold;
+}
+
+.col-chat-msg-date {
+  right: 0;
+  color: #777777;
+  text-align: right;
+}
+
+.message-text-col {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #777777;
 }
 
 
