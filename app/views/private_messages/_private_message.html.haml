@@ -1,6 +1,11 @@
 .container-fluid
   .row.chat-msg-row
     .col-xs-2.col-sm-1.col-md-1.col-lg-1
+      .chat-avatar
+        - if private_message.user.avatar.present?
+          = image_tag private_message.user.avatar
+        - else
+          = image_tag asset_pack_path("#{private_message.user.avatar}")
     .col-xs-10.col-sm-11.col-md-11.col-lg-11
       .row.message-user-data-row
         .col-xs-6.col-chat-msg-user-name
