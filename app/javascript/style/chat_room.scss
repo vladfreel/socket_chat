@@ -7,9 +7,8 @@
 }
 
 .chat-menu-col {
-  background-color: #3e4551;
+  background-color: #434753;
   height: 100%;
-  border-right: solid white 1px;;
 }
 
 .chat-messages-col {
@@ -19,7 +18,7 @@
 
 .chat-head-row {
   height: 7%;
-  background-color: #3e4551;
+  background-color: #434753;
   display: flex;
 }
 
@@ -30,7 +29,7 @@
 
 .chat-message-form-row {
   height: 44px;
-  background-color: #3e4551;
+  background-color: #434753;
   position: fixed;
   margin-left: -15px;
   bottom: 0;
@@ -55,7 +54,21 @@
   height: 7%;
 }
 
+#dropdownMenuChat {
+  font-size: 18pt;
+  font-weight: bolder;
+  color: white;
+  margin-top: 5%;
+  cursor: pointer;
+}
 
+.chat-main-menu-row:hover {
+  background-color: #263238;
+}
+
+.chat-main-menu-icon {
+  margin-left: 5px;
+}
 
 /* Chat containers */
 .msg-container {

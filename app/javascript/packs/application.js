@@ -15,6 +15,7 @@ import 'bootstrap/dist/js/bootstrap';
 import 'packs/sign_up'
 import 'packs/actioncable_connect'
 import 'style/application.scss'
+import 'images/default_avatar.png'
 
 console.log('Hello World from Webpacker');
 
