@@ -51,36 +51,59 @@
   resize: none;
 }
 
-.message-user-data-row {
-  padding-top: 15px;
+/* Chat containers */
+.msg-container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-.col-chat-msg-user-name {
-  color: black;
-  font-weight: bold;
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
 }
 
-.col-chat-msg-date {
-  right: 0;
-  color: #777777;
-  text-align: right;
+/* Clear floats */
+.msg-container::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.message-text-col {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  color: #777777;
+/* Style images */
+.msg-container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
 }
 
-.chat-avatar {
-  img {
-    border-radius: 50%;
-    width: 60px;
-    margin-top: 5px;
-  }
+/* Style the right image */
+.msg-container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
 }
 
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
 
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+.chat-user-name {
+  font-weight: bolder;
+}
 
 
 
