@@ -49,3 +49,7 @@ dev_server:
     port: 3035
     public: your_local_ip:3035
     hmr: false
+    
+To run server for testing facebook omniauth :
+openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout localhost.key -out localhost.crt
+rails s -b 'ssl://localhost:3000?key=localhost.key&cert=localhost.crt'    
