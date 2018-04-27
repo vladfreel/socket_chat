@@ -46,6 +46,12 @@ gem 'elasticsearch-rails'
 gem 'webpacker', '~> 3.4'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pundit'
+gem 'omniauth-facebook', '~> 4.0'
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+gem 'omniauth-instagram'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
