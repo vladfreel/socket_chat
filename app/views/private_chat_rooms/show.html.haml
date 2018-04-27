@@ -1,7 +1,20 @@
 .container-fluid.main-chat-container
   .row.main-chat-row
     .hidden-xs.col-sm-4.col-md-3.col-lg-2.chat-menu-col
-      .row.chat-main-menu-row
+      .row.chat-main-menu-row.dropdown
+        #dropdownMenuChat.text-center.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+          Socket Chat
+          %i.fa.fa-bars.chat-main-menu-icon
+        %ul.dropdown-menu.dropdown-menu-right{"aria-labelledby" => "dropdownMenu1"}
+          %li
+            %a{:href => "#"} Action
+          %li
+            %a{:href => "#"} Another action
+          %li
+            %a{:href => "#"} Something else here
+          %li.divider{:role => "separator"}
+          %li
+            %a{:href => "#"} Separated link
     .col-xs-12.col-sm-8.col-md-9.col-lg-10.chat-messages-col
       .row.chat-head-row
       .row.chat-message-row#private_messages{"data-private-chat-room-id" => "#{@private_chat_room.id}"}
