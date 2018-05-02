@@ -17,4 +17,18 @@ import 'packs/actioncable_connect'
 import 'style/application.scss'
 
 console.log('Hello World from Webpacker');
-
+$(document).ready(function() {
+    // var button = $('.b_edit_message');
+    // button.click(function() {
+    //     console.log(button);
+    //     $('#edit_message' + button.data()).data("hidden", false);
+    //     button.hide();
+    // });
+    $(".b_edit_message").on('click',function() {
+        var text = $(this).data('id');
+        $('#edit_message' + text).show();
+        $('#message' + text).hide();
+        $(this).hide();
+        alert(text);
+    });
+});
