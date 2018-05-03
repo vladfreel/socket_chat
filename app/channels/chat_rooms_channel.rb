@@ -9,6 +9,9 @@ class ChatRoomsChannel < ApplicationCable::Channel
   end
 
   def send_message(data)
-    current_user.messages.create!(body: data['message'], chat_room_id: data['chat_room_id'])
+    message = current_user.messages.new(body: data['message'], chat_room_id: data['chat_room_id'])
+    if message.save!
+      MessageBroadcastJob.perform_now(message, current_user)
+    end
   end
 end

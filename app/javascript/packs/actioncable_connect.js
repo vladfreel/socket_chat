@@ -80,7 +80,7 @@ $(document).ready(function(){
     }
 
     ///////////////////////
-    var messages, messages_to_bottom;
+    var messages, messages_to_bottom, message;
     messages = $('#messages');
     if ($('#messages').length > 0) {
         messages_to_bottom = function() {
@@ -94,7 +94,16 @@ $(document).ready(function(){
             connected: function() {},
             disconnected: function() {},
             received: function(data) {
-                messages.append(data['message']);
+                message = JST['messages/templates/message']({
+                    name: message.user.name,
+                    time: message.timestamp,
+                    body: message.body,
+                    chat_room_id: message.name,
+                    current_user: message.name,
+                    id: message.id
+                });
+                messages.append(message);
+                // messages.append(data['message']);
                 return messages_to_bottom();
             },
             send_message: function(message, chat_room_id) {

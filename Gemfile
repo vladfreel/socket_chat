@@ -51,6 +51,7 @@ gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
 gem 'omniauth-instagram'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
+gem 'ejs'
 
 
 group :development, :test do
