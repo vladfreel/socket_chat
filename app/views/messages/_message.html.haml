@@ -5,7 +5,6 @@
       .col-md-11
         %p.card-text
           %span.text-muted
-            = message.user.name
             at #{message.timestamp} says
           %br
           %pre
@@ -14,7 +13,29 @@
               = f.submit 'Update'
             %span{id: "message#{message.id}"}
               = message.body
-          - if current_user.id == message.user.id
-            = button_to 'Delete Message', [message],  method: :delete
-            %button.b_edit_message{ 'data-id': message.id }
-              Edit Message
+              = button_to 'Delete Message', [message],  method: :delete, id: "public-msg-delete-#{message.id}"
+              %button.b_edit_message{ 'data-id': message.id, id: "public-msg-edit-#{message.id}" }
+                Edit Message
+            -#- if current_user == message.user
+            -#  = button_to 'Delete Message', [message],  method: :delete, id: "delete-public-msg-#{message.id}"
+            -#  %button.b_edit_message{ 'data-id': message.id }
+            -#    Edit Message
+            -#-else
+            -#  = button_to 'Delete Message', [message],  method: :delete, id: "public-msg-delete-#{message.id}"
+            -#  %button.b_edit_message{ 'data-id': message.id, id: "public-msg-edit-#{message.id}" }
+            -#    Edit Message
+
+
+
+-#.row
+-#  .col-xs-2.col-sm-1.col-md-1.col-lg-1
+-#  .col-xs-10.col-sm-11.col-md-11.col-lg-11
+-#    .row.message-user-data-row
+-#      .col-xs-6
+-#        = message.user.name
+-#      .col-xs-6
+-#        = message.timestamp
+-#    .row.message-text-row
+-#      .col-xs-12.message-text-col
+-#        = message.body
+

@@ -1,6 +1,6 @@
 ActionCable = require('actioncable')
 
-var cable = ActionCable.createConsumer('wss://localhost:3000/cable')
+var cable = ActionCable.createConsumer('wss://localhost:3000/cable');
 
 $(document).ready(function(){
 
@@ -94,16 +94,50 @@ $(document).ready(function(){
             connected: function() {},
             disconnected: function() {},
             received: function(data) {
-                message = JST['messages/templates/message']({
-                    name: message.user.name,
-                    time: message.timestamp,
-                    body: message.body,
-                    chat_room_id: message.name,
-                    current_user: message.name,
-                    id: message.id
-                });
-                messages.append(message);
-                // messages.append(data['message']);
+                function getUserIdFromCookies() {
+                    var cookies = document.cookie.split(';');
+                    var splitedCookies = [];
+                    cookies.forEach(function (singleCookie, i, arr) {
+                        splitedCookies.push(cookies[i].split('='));
+                    });
+                    var result = '';
+                    splitedCookies.forEach(function (splitedOneCookie, i, arr) {
+                        // console.log("000000000000000");
+                        // console.log(splitedOneCookie[0] === 'current_user_id' || splitedOneCookie[0] === ' current_user_id');
+                        if (splitedOneCookie[0] === 'current_user_id' || splitedOneCookie[0] === ' current_user_id') {
+                            // console.log(splitedOneCookie[1]);
+                            result = splitedOneCookie[1];
+                        }
+                    });
+                    return result;
+                }
+                // console.log("=======================================");
+                // console.log(typeof (data['message_user_id']));
+                // console.log("=======================================");
+                // console.log("---------------------------------------");
+                // console.log(typeof (getUserIdFromCookies()));
+                // console.log("---------------------------------------");
+                // console.log("---------------------------------------");
+                // console.log(parseInt(data['message_user_id'], 10) === getUserIdFromCookies());
+                // console.log(data['message_user_id'] === parseInt(getUserIdFromCookies(), 10));
+
+                // console.log(data['message']);
+
+                // console.log(data['message_id']);
+
+                // console.log(typeof (data['message_user_id']));
+                // console.log("---------------------------------------");
+                // console.log(typeof (parseInt(getUserIdFromCookies(), 10)));
+                // console.log("========================================");
+
+                messages.append(data['message']);
+                if (data['message_user_id'] !== parseInt(getUserIdFromCookies(), 10)) {
+                    // console.log($('#public-msg-delete-' + data['message_id']));
+                    // console.log($('#public-msg-edit-' + data['message_id']));
+
+                    $('#public-msg-delete-' + data['message_id']).hide();
+                    $('#public-msg-edit-' + data['message_id']).hide();
+                }
                 return messages_to_bottom();
             },
             send_message: function(message, chat_room_id) {

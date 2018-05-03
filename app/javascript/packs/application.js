@@ -15,6 +15,7 @@ import 'bootstrap/dist/js/bootstrap';
 import 'packs/sign_up'
 import 'packs/actioncable_connect'
 import 'style/application.scss'
+import 'images/default_avatar.png'
 
 console.log('Hello World from Webpacker');
 $(document).ready(function() {
@@ -31,4 +32,25 @@ $(document).ready(function() {
         $(this).hide();
         alert(text);
     });
+
+    console.log(document.cookie);
+    // console.log(getUserIdFromCookies());
+
+    function getUserIdFromCookies() {
+        var cookies = document.cookie.split(';');
+        var splitedCookies = [];
+        cookies.forEach(function (singleCookie, i, arr) {
+            splitedCookies.push(cookies[i].split('='));
+        });
+        var result = '';
+        splitedCookies.forEach(function (splitedOneCookie, i, arr) {
+            console.log("000000000000000");
+            console.log(splitedOneCookie[0] === 'current_user_id' || splitedOneCookie[0] === ' current_user_id');
+            if (splitedOneCookie[0] === 'current_user_id' || splitedOneCookie[0] === ' current_user_id') {
+                console.log(splitedOneCookie[1]);
+                result = splitedOneCookie[1];
+            }
+        });
+        return result;
+    }
 });
