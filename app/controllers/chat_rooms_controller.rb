@@ -24,6 +24,7 @@ class ChatRoomsController < ApplicationController
     @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
     authorize @chat_room
     @message = Message.new
+    cookies[:current_user_id] = current_user.id
   end
 
   private
