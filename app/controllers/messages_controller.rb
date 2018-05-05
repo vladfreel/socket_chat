@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
   def update
     message = Message.find(params[:id])
     message.update!(message_params)

@@ -30,7 +30,6 @@ $(document).ready(function() {
         $('#edit_message' + text).show();
         $('#message' + text).hide();
         $(this).hide();
-        alert(text);
     });
 
     console.log(document.cookie);
@@ -44,10 +43,7 @@ $(document).ready(function() {
         });
         var result = '';
         splitedCookies.forEach(function (splitedOneCookie, i, arr) {
-            console.log("000000000000000");
-            console.log(splitedOneCookie[0] === 'current_user_id' || splitedOneCookie[0] === ' current_user_id');
             if (splitedOneCookie[0] === 'current_user_id' || splitedOneCookie[0] === ' current_user_id') {
-                console.log(splitedOneCookie[1]);
                 result = splitedOneCookie[1];
             }
         });

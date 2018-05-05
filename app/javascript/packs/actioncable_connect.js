@@ -111,6 +111,14 @@ $(document).ready(function(){
                     });
                     return result;
                 }
+                $(".b_edit_message").on('click',function() {
+                    console.log('gggggggggg');
+                    var text = $(this).data('id');
+                    $('#edit_message' + text).show();
+                    $('#message' + text).hide();
+                    $(this).hide();
+                    alert(text);
+                });
                 // console.log("=======================================");
                 // console.log(typeof (data['message_user_id']));
                 // console.log("=======================================");
@@ -132,9 +140,6 @@ $(document).ready(function(){
 
                 messages.append(data['message']);
                 if (data['message_user_id'] !== parseInt(getUserIdFromCookies(), 10)) {
-                    // console.log($('#public-msg-delete-' + data['message_id']));
-                    // console.log($('#public-msg-edit-' + data['message_id']));
-
                     $('#public-msg-delete-' + data['message_id']).hide();
                     $('#public-msg-edit-' + data['message_id']).hide();
                 }

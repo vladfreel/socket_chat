@@ -5,7 +5,7 @@
       .col-md-11
         %p.card-text
           %span.text-muted
-            at #{message.timestamp} says
+            = "#{message.user.name} at #{message.timestamp} says"
           %br
           %pre
             = form_for message, method: :put, html: {hidden: true, id: "edit_message#{message.id}"}  do |f|
@@ -13,17 +13,14 @@
               = f.submit 'Update'
             %span{id: "message#{message.id}"}
               = message.body
+            - if current_user == message.user
+              = button_to 'Delete Message', [message],  method: :delete, id: "delete-public-msg-#{message.id}"
+              %button.b_edit_message{ 'data-id': message.id }
+                Edit Message
+            -elsif current_user.nil?
               = button_to 'Delete Message', [message],  method: :delete, id: "public-msg-delete-#{message.id}"
               %button.b_edit_message{ 'data-id': message.id, id: "public-msg-edit-#{message.id}" }
                 Edit Message
-            -#- if current_user == message.user
-            -#  = button_to 'Delete Message', [message],  method: :delete, id: "delete-public-msg-#{message.id}"
-            -#  %button.b_edit_message{ 'data-id': message.id }
-            -#    Edit Message
-            -#-else
-            -#  = button_to 'Delete Message', [message],  method: :delete, id: "public-msg-delete-#{message.id}"
-            -#  %button.b_edit_message{ 'data-id': message.id, id: "public-msg-edit-#{message.id}" }
-            -#    Edit Message
 
 
 
