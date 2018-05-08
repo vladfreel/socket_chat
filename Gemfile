@@ -44,6 +44,7 @@ gem 'mini_magick'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'webpacker', '~> 3.4'
+gem 'react-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pundit'
 gem 'omniauth-facebook', '~> 4.0'
@@ -52,6 +53,7 @@ gem 'omniauth-instagram'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 gem 'ejs'
+
 
 
 group :development, :test do

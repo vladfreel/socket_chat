@@ -11,7 +11,9 @@ class MessagesController < ApplicationController
     message.destroy
     redirect_to chat_room_path(message.chat_room.id)
   end
+
   private
+
   def message_params
     params.require(:message).permit(:body)
   end

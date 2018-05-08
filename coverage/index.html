@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-27T15:57:14+03:00">2018-04-27T15:57:14+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-07T16:00:33+03:00">2018-05-07T16:00:33+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.25%</span></span>
+    (<span class="covered_percent"><span class="green">93.29%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.56
+         1.63
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>73</b> files in total.
-    <b>755</b> relevant lines. 
-    <span class="green"><b>704</b> lines covered</span> and
+    <b>760</b> relevant lines. 
+    <span class="green"><b>709</b> lines covered</span> and
     <span class="red"><b>51</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -62,10 +62,10 @@
       
       <tr>
         <td class="strong"><a href="#e04160471d685d8d181b94dba637b95dd2e1177c" class="src_link" title="app/controllers/chat_rooms_controller.rb">app/controllers/chat_rooms_controller.rb</a></td>
-        <td class="green strong">95.24 %</td>
-        <td>34</td>
+        <td class="green strong">95.45 %</td>
+        <td>35</td>
+        <td>22</td>
         <td>21</td>
-        <td>20</td>
         <td>1</td>
         <td>1.9</td>
       </tr>
@@ -103,11 +103,11 @@
       <tr>
         <td class="strong"><a href="#eb722bd0ed4d203d8cda33df470afdabdab2011d" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>9</td>
         <td>5</td>
-        <td>3</td>
-        <td>3</td>
+        <td>5</td>
         <td>0</td>
-        <td>3.7</td>
+        <td>4.2</td>
       </tr>
       
       <tr>
@@ -232,12 +232,12 @@
       
       <tr>
         <td class="strong"><a href="#c8e9fb9d352038244e1ec2e3c3e6932ad628ec62" class="src_link" title="app/models/message.rb">app/models/message.rb</a></td>
-        <td class="yellow strong">85.71 %</td>
-        <td>12</td>
-        <td>7</td>
+        <td class="yellow strong">83.33 %</td>
+        <td>13</td>
         <td>6</td>
+        <td>5</td>
         <td>1</td>
-        <td>0.9</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -292,12 +292,12 @@
       
       <tr>
         <td class="strong"><a href="#259c67e61357fd10ab0b4d839d4a068c9688153f" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">65.31 %</td>
+        <td class="red strong">66.0 %</td>
         <td>88</td>
-        <td>49</td>
-        <td>32</td>
+        <td>50</td>
+        <td>33</td>
         <td>17</td>
-        <td>3.7</td>
+        <td>3.6</td>
       </tr>
       
       <tr>
@@ -342,12 +342,12 @@
       
       <tr>
         <td class="strong"><a href="#a008d26e2e2bb32f60ea84c65d57af11a462c425" class="src_link" title="app/uploaders/avatar_uploader.rb">app/uploaders/avatar_uploader.rb</a></td>
-        <td class="red strong">71.43 %</td>
+        <td class="red strong">77.78 %</td>
         <td>47</td>
+        <td>9</td>
         <td>7</td>
-        <td>5</td>
         <td>2</td>
-        <td>0.7</td>
+        <td>5.7</td>
       </tr>
       
       <tr>
@@ -950,10 +950,10 @@
         <div class="source_table" id="e04160471d685d8d181b94dba637b95dd2e1177c">
   <div class="header">
     <h3>app/controllers/chat_rooms_controller.rb</h3>
-    <h4><span class="green">95.24 %</span> covered</h4>
+    <h4><span class="green">95.45 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>22</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -1117,49 +1117,55 @@
           <code class="ruby">    @message = Message.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    cookies[:current_user_id] = current_user.id</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def chat_room_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="32">
+        <li class="covered" data-hits="2" data-linenumber="33">
           <span class="hits">2</span>
           
           <code class="ruby">    params.require(:chat_room).permit(:title)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">end</code>
@@ -2012,8 +2018,8 @@
     <h3>app/helpers/application_helper.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2030,7 +2036,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  def no_footer_page(controller_name, action_name)</code>
+          <code class="ruby">  def no_header_page(controller_name, action_name)</code>
         </li>
       
         <li class="covered" data-hits="9" data-linenumber="3">
@@ -2046,6 +2052,30 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def no_footer_page(controller_name, action_name)</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="7">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    controller_name == &#39;private_chat_rooms&#39; &amp;&amp; action_name == &#39;show&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
@@ -2479,10 +2509,10 @@
         <div class="source_table" id="c8e9fb9d352038244e1ec2e3c3e6932ad628ec62">
   <div class="header">
     <h3>app/models/message.rb</h3>
-    <h4><span class="yellow">85.71 %</span> covered</h4>
+    <h4><span class="yellow">83.33 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -2526,10 +2556,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="7">
           
-          <code class="ruby">  after_create_commit { MessageBroadcastJob.perform_later(self) }</code>
+          
+          <code class="ruby">  # after_create_commit { MessageBroadcastJob.perform_later(self, current_user) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -2557,6 +2587,12 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">end</code>
@@ -3001,10 +3037,10 @@
         <div class="source_table" id="259c67e61357fd10ab0b4d839d4a068c9688153f">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">65.31 %</span> covered</h4>
+    <h4><span class="red">66.0 %</span> covered</h4>
     <div>
-      <b>49</b> relevant lines. 
-      <span class="green"><b>32</b> lines covered</span> and
+      <b>50</b> relevant lines. 
+      <span class="green"><b>33</b> lines covered</span> and
       <span class="red"><b>17</b> lines missed.</span>
     </div>
   </div>
@@ -3372,8 +3408,8 @@
           <code class="ruby">  def name</code>
         </li>
       
-        <li class="covered" data-hits="53" data-linenumber="61">
-          <span class="hits">53</span>
+        <li class="covered" data-hits="51" data-linenumber="61">
+          <span class="hits">51</span>
           
           <code class="ruby">    username</code>
         </li>
@@ -3534,10 +3570,10 @@
           <code class="ruby">User.__elasticsearch__.create_index! force: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># User.import(force: true)</code>
+          <code class="ruby">User.import(force: true)</code>
         </li>
       
     </ol>
@@ -4392,10 +4428,10 @@
         <div class="source_table" id="a008d26e2e2bb32f60ea84c65d57af11a462c425">
   <div class="header">
     <h3>app/uploaders/avatar_uploader.rb</h3>
-    <h4><span class="red">71.43 %</span> covered</h4>
+    <h4><span class="red">77.78 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
@@ -4499,40 +4535,40 @@
           <code class="ruby">  # Provide a default URL as a default if there hasn&#39;t been a file uploaded:</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # def default_url(*args)</code>
+          <code class="ruby">  def default_url(*args)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">  #   # For Rails 3.1+ asset pipeline compatibility:</code>
+          <code class="ruby">    # For Rails 3.1+ asset pipeline compatibility:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">  #   # ActionController::Base.helpers.asset_path(&quot;fallback/&quot; + [version_name, &quot;default.png&quot;].compact.join(&#39;_&#39;))</code>
+          <code class="ruby">    # ActionController::Base.helpers.asset_path(&quot;fallback/&quot; + [version_name, &quot;default.png&quot;].compact.join(&#39;_&#39;))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  #</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="covered" data-hits="45" data-linenumber="21">
+          <span class="hits">45</span>
           
-          
-          <code class="ruby">  #   &quot;/images/fallback/&quot; + [version_name, &quot;default.png&quot;].compact.join(&#39;_&#39;)</code>
+          <code class="ruby">    &quot;images/&quot; + [version_name, &quot;default_avatar.png&quot;].compact.join(&#39;_&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">  # end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -7618,7 +7654,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  resources :messages, only: [:destroy, :update]</code>
+          <code class="ruby">  resources :messages, only: [:destroy, :update, :index]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">

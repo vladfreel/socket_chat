@@ -600,7 +600,7 @@
         null,
         null,
         1,
-        53,
+        51,
         null,
         null,
         1,
@@ -627,7 +627,7 @@
         null,
         null,
         1,
-        null
+        1
       ],
       "/home/pupirev/RubymineProjects/socket_chat/app/models/application_record.rb": [
         1,
@@ -651,11 +651,11 @@
         null,
         null,
         null,
+        1,
         null,
         null,
         null,
-        null,
-        null,
+        45,
         null,
         null,
         null,
@@ -711,6 +711,10 @@
       ],
       "/home/pupirev/RubymineProjects/socket_chat/app/helpers/application_helper.rb": [
         1,
+        1,
+        9,
+        null,
+        null,
         1,
         9,
         null,
@@ -776,6 +780,7 @@
         null,
         null,
         1,
+        2,
         2,
         2,
         2,
@@ -1225,10 +1230,11 @@
         null,
         1,
         null,
-        1,
+        null,
         null,
         1,
         0,
+        null,
         null,
         null
       ],
@@ -1801,6 +1807,6 @@
         null
       ]
     },
-    "timestamp": 1524833834
+    "timestamp": 1525698032
   }
 }

@@ -9,5 +9,12 @@ class Message < ApplicationRecord
   def timestamp
     created_at.strftime('%H:%M:%S %d %B %Y')
   end
+  def to_message_json
+    {
+        body: body,
+        user_id: user_id,
+        chat_room: chat_room_id
+    }
+  end
 
 end

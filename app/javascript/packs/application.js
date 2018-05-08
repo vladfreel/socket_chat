@@ -7,6 +7,7 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+
 import 'jquery/src/jquery'
 import 'jquery-ujs/src/rails'
 import 'bootstrap/dist/css/bootstrap.css';
@@ -16,6 +17,7 @@ import 'packs/sign_up'
 import 'packs/actioncable_connect'
 import 'style/application.scss'
 import 'images/default_avatar.png'
+// import '../components/messages/MessageBox'
 
 console.log('Hello World from Webpacker');
 $(document).ready(function() {
@@ -27,8 +29,8 @@ $(document).ready(function() {
     // });
     $(".b_edit_message").on('click',function() {
         var text = $(this).data('id');
-        $('#edit_message' + text).show();
-        $('#message' + text).hide();
+        $('#edit_message' + text.toString()).show();
+        $('#message' + text.toString()).hide();
         $(this).hide();
     });
 
@@ -50,3 +52,7 @@ $(document).ready(function() {
         return result;
     }
 });
+// Support component names relative to this directory:
+var componentRequireContext = require.context("components", true)
+var ReactRailsUJS = require("react_ujs")
+ReactRailsUJS.useContext(componentRequireContext)

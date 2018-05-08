@@ -21,7 +21,8 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
-    @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
+    @chat_room = ChatRoom.find_by(id: params[:id])
+    @messages = Message.all.order(created_at: :asc)
     authorize @chat_room
     @message = Message.new
     cookies[:current_user_id] = current_user.id
