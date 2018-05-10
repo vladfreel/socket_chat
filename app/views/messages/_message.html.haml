@@ -1,11 +1,25 @@
-.card
+.row
+  .col-xs-2.col-sm-1.col-md-1.col-lg-1
+  .col-xs-10.col-sm-11.col-md-11.col-lg-11
+    .row.message-user-data-row
+      .col-xs-6
+        = message.user.name
+      .col-xs-6
+        = message.timestamp
+    .row.message-text-row
+      .col-xs-12.message-text-col
+        = message.body
+
+
+
+-#.card
   .card-block
     .row
       .col-md-1
       .col-md-11
         %p.card-text
           %span.text-muted
-            = message.user.name
+
             at #{message.timestamp} says
           %br/
           = message.body

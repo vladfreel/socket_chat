@@ -1,22 +1,67 @@
 .container-fluid.main-chat-container
   .row.main-chat-row
-    .chat-menu-col
-      %h1= @private_chat_room.name
-      %p.left-chat-menu-section Room members:
-      .left-chat-menu-member
-        =@private_chat_room.membership.owner.name
-      .left-chat-menu-member
-        =@private_chat_room.membership.member.name
-    .chat-messages-col
-      .chat-messages-container
-        -#= render @private_chat_room.private_messages
-      .chat-send-form-container
+    .hidden-xs.col-sm-4.col-md-3.col-lg-2.chat-menu-col
+      .row.chat-main-menu-row.dropdown
+        #dropdownMenuChat.text-center.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+          Socket Chat
+          %i.fa.fa-bars.chat-main-menu-icon
+        %ul.dropdown-menu.dropdown-menu-right{"aria-labelledby" => "dropdownMenu1"}
+          %li
+            %a{:href => "#"} Action
+          %li
+            %a{:href => "#"} Another action
+          %li
+            %a{:href => "#"} Something else here
+          %li.divider{:role => "separator"}
+          %li
+            %a{:href => "#"} Separated link
+    .col-xs-12.col-sm-8.col-md-9.col-lg-10.chat-messages-col
+      .row.chat-head-row
+      .row.chat-message-row#private_messages{"data-private-chat-room-id" => "#{@private_chat_room.id}"}
+        = render @private_chat_room.private_messages
+      .chat-message-form-row
         = form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
           = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
-          .input-group
-            = f.text_area :content, class: 'form-control custom-control', html: {:rows => "2", :style => "resize:none"}
-            %span.input-group-addon.btn.btn-primary
-              = f.submit 'Send', class: 'btn-send-message btn-private-chat-send btn btn-primary'
+          .input-group.private-chat-input-group
+            = f.text_area :content, class: 'form-control private-message-text-area'
+            %span.input-group-btn
+              = f.submit 'Post', class: 'btn btn-warning btn-send-private-message'
+
+
+
+-#.container-fluid.main-chat-container
+-#  .row.main-chat-row
+-#    .chat-menu-col
+-#      %h1= @private_chat_room.name
+-#      %p.left-chat-menu-section Room members:
+-#      .left-chat-menu-member
+-#        =@private_chat_room.membership.owner.name
+-#      .left-chat-menu-member
+-#        =@private_chat_room.membership.member.name
+-#    .chat-messages-col
+-#      .chat-messages-container
+-#        #private_messages{"data-private-chat-room-id" => "#{@private_chat_room.id}"}
+-#          -#= render @private_chat_room.private_messages
+-#      .chat-send-form-container
+-#        = form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
+-#          = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
+-#          .input-group.private-chat-input-group
+-#            = f.text_area :content, class: 'form-control private-message-text-area'
+-#            %span.input-group-btn
+-#              = f.submit 'Post', class: 'btn btn-primary btn-send-private-message'
+
+
+
+        -#= form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
+        -#  = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
+        -#  .input-group
+        -#    = f.text_area :content, class: 'form-control custom-control', html: {:rows => "2", :style => "resize:none"}
+        -#    %span.input-group-addon.btn.btn-primary#span-btn-private-msg Send
+        -#  = f.submit 'Post', class: 'btn btn-primary btn-private-chat-send', id: 'btn-private-chat-send'
+
+
+
+
         -#= form_for @message, url: '#', html:{id: 'private_new_message'} do |f|
         -#  = hidden_field_tag 'private_chat_room_id', @private_chat_room.id
         -#  = f.text_area :content, class: 'private-message-text-area'

@@ -15,6 +15,11 @@ import 'bootstrap/dist/js/bootstrap';
 import 'packs/sign_up'
 import 'packs/actioncable_connect'
 import 'style/application.scss'
+import 'images/default_avatar.png'
 
 console.log('Hello World from Webpacker');
 
+// Support component names relative to this directory:
+var componentRequireContext = require.context("components", true)
+var ReactRailsUJS = require("react_ujs")
+ReactRailsUJS.useContext(componentRequireContext)

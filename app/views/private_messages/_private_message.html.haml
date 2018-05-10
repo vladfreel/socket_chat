@@ -1,11 +1,25 @@
-.card
-  .card-block
-    .row
-      .col-md-1
-      .col-md-11
-        %p.card-text
-          %span.text-muted
-            = private_message.user.username
-            at #{private_message.timestamp} says
-          %br/
-          = private_message.content
+.container-fluid
+  - if private_message.user == current_user
+    .msg-container.darker
+      - if private_message.user.avatar.present?
+        = image_tag private_message.user.avatar, class: 'right'
+      - else
+        = image_tag asset_pack_path("#{private_message.user.avatar}"), class: 'right'
+      %p.chat-user-name
+        = private_message.user.name
+      %p
+        = private_message.content
+      %span.time-left
+        = time_ago_in_words(private_message.created_at)
+  - else
+    .msg-container
+      - if private_message.user.avatar.present?
+        = image_tag private_message.user.avatar
+      - else
+        = image_tag asset_pack_path("#{private_message.user.avatar}")
+      %p.chat-user-name
+        = private_message.user.name
+      %p
+        = private_message.content
+      %span.time-right
+        = time_ago_in_words(private_message.created_at)
