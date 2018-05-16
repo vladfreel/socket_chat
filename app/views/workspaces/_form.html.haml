@@ -1,0 +1,10 @@
+= form_for @workspace do |f|
+  - if @workspace.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@workspace.errors.count, "error")} prohibited this workspace from being saved:"
+      %ul
+        - @workspace.errors.full_messages.each do |message|
+          %li= message
+
+  .actions
+    = f.submit 'Save'

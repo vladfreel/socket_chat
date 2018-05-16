@@ -1,0 +1,4 @@
+class PrimaryOwner < User
+
+
+end

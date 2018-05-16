@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426102913) do
+ActiveRecord::Schema.define(version: 20180516095735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,8 +104,23 @@ ActiveRecord::Schema.define(version: 20180426102913) do
     t.string "uid"
     t.string "name"
     t.text "image"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "display_name"
+    t.integer "role"
+    t.bigint "workspace_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["workspace_id"], name: "index_users_on_workspace_id"
+  end
+
+  create_table "workspaces", force: :cascade do |t|
+    t.string "name"
+    t.string "subdomain"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_workspaces_on_user_id"
   end
 
   add_foreign_key "chat_rooms", "users"
@@ -121,4 +136,6 @@ ActiveRecord::Schema.define(version: 20180426102913) do
   add_foreign_key "multi_user_private_chat_rooms", "users"
   add_foreign_key "private_messages", "private_chat_rooms"
   add_foreign_key "private_messages", "users"
+  add_foreign_key "users", "workspaces"
+  add_foreign_key "workspaces", "users"
 end
