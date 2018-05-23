@@ -10,7 +10,6 @@
 import 'jquery/src/jquery'
 import 'jquery-ujs/src/rails'
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme'
 import 'bootstrap/dist/js/bootstrap';
 import 'packs/sign_up'
 import 'packs/actioncable_connect'
