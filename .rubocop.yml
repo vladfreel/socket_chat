@@ -1,0 +1,41 @@
+AllCops:
+  TargetRubyVersion: 2.4.1
+
+  Include:
+    - app/**/*.rb
+    - spec/**/*.rb
+  Exclude:
+    - bin/**/*
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+
+Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - spec/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - spec/**/*

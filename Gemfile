@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'haml-rails'
+gem 'haml-rails', '~> 1.0'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'redis', '~> 3.2'
@@ -53,34 +53,35 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 gem 'react-rails'
 
-
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'geckodriver-helper'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'geckodriver-helper'
 end
+
 group :test do
-  gem 'simplecov', :require => false
-  gem 'rspec-rails'
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem 'factory_bot_rails'
-  gem 'shoulda-matchers', '~> 3.1'
+  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
   gem 'rails-controller-testing'
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-  gem 'database_cleaner'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', require: false
 end
+
 group :development do
+  gem 'rubocop', '~> 0.56.0', require: false
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
