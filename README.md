@@ -92,6 +92,9 @@
     - pull request can be merged only after approved
 - Don't create pull request, which is not related to issue.
     
+## License
+[License](LICENSE)
+    
 ## Authors:
 - Igor Polyakov
 - Anton Storchak
