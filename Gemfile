@@ -41,16 +41,9 @@ gem 'jquery-rails'
 gem 'redis', '~> 3.2'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
 gem 'webpacker', '~> 3.4'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pundit'
-gem 'omniauth-facebook', '~> 4.0'
-gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
-gem 'omniauth-instagram'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-github'
 gem 'react-rails'
 
 group :development, :test do

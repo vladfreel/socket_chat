@@ -1,5 +1,5 @@
 class MultiUserPrivateChatRoomsController < ApplicationController
-  before_action :find_room, only: %i[ show edit update ]
+  before_action :find_room, only: %i[show edit update]
 
   def new
     @multi_user_private_chat_room = MultiUserPrivateChatRoom.new
@@ -17,8 +17,7 @@ class MultiUserPrivateChatRoomsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @chat_room.update!(multi_user_chat_room_params)
@@ -37,11 +36,6 @@ class MultiUserPrivateChatRoomsController < ApplicationController
     @multi_chat_room = MultiUserPrivateChatRoom.includes(:multi_user_messages).find_by(id: params[:id])
     authorize @multi_chat_room
     @message = MultiUserMessage.new
-    if params[:username].nil? || params[:username] == current_user.username
-      @find_users = []
-    else
-      @find_users = User.search params[:username]
-    end
     @membership = @chat_room.multi_user_memberships.build
   end
 

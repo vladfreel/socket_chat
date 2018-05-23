@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :users
-  resources :chat_rooms, only: [:new, :create, :show, :index]
-  resources :private_chat_rooms, except: [:update, :edit, :destroy]
+  devise_for :users
+
+  resources :chat_rooms, only: %i[new create show index]
+  resources :private_chat_rooms, except: %i[update edit destroy]
   resources :multi_user_private_chat_rooms
   resources :multi_user_memberships
   get 'search', to: 'private_chat_rooms#search'
