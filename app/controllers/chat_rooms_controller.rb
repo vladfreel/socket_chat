@@ -1,7 +1,7 @@
 class ChatRoomsController < ApplicationController
   def index
     @chat_rooms = ChatRoom.all
-    # authorize @chat_rooms
+    authorize @chat_rooms
   end
 
   def new

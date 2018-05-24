@@ -34,7 +34,7 @@ Devise.setup do |config|
 
   # ==> Configuration for any authentication mechanism
 
-  config.authentication_keys = [ :login ]
+  config.authentication_keys = [:email]
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
   # authenticating a user, both parameters are required. Remember that those
