@@ -23,25 +23,13 @@ class PrivateChatRoomsController < ApplicationController
         redirect_to private_chat_rooms_path
       end
     else
-        redirect_to private_chat_room_path(check.private_chat_room.id)
+      redirect_to private_chat_room_path(check.private_chat_room.id)
     end
-  end
-
-  def search
-    if params[:username].nil? || params[:username] == current_user.username
-      @users = []
-    else
-      @users = User.search params[:username]
-    end
-    @room = PrivateChatRoom.new
-    authorize @room
-    @room.build_membership
   end
 
   private
 
   def private_chat_room_params
-    params.require(:private_chat_room).permit(:name, membership_attributes: [:owner_id, :member_id])
+    params.require(:private_chat_room).permit(:name, membership_attributes: %i[owner_idmember_id])
   end
-
 end

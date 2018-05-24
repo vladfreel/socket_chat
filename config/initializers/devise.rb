@@ -34,7 +34,7 @@ Devise.setup do |config|
 
   # ==> Configuration for any authentication mechanism
 
-  config.authentication_keys = [ :login ]
+  config.authentication_keys = [:email]
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
   # authenticating a user, both parameters are required. Remember that those
@@ -144,7 +144,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -282,18 +282,18 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
-                  callback_url: 'https://localhost:3000/users/auth/facebook/callback'
-  config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET'],
-                  scope: 'email', info_fields: 'email, password',
-                  callback_url: 'https://localhost:3000/users/auth/twitter/callback'
-  config.omniauth :instagram, ENV['INSTAGRAM_APP_ID'], ENV['INSTAGRAM_APP_SECRET'],
-                  setup: true,
-                  callback_url: 'https://localhost:3000/users/auth/instagram/callback'
-  config.omniauth :google_oauth2, ENV["GOOGLE_APP_ID"], ENV["GOOGLE_APP_SECRET"],
-                  scope: "email",
-                  callback_url: 'https://localhost:3000/users/auth/google_oauth2/callback'
-  config.omniauth :github, ENV["GITHUB_APP_ID"], ENV["GITHUB_APP_SECRET"],
-                  callback_url: 'https://localhost:3000/users/auth/github/callback'
+  # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
+  #                 callback_url: 'https://localhost:3000/users/auth/facebook/callback'
+  # config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET'],
+  #                 scope: 'email', info_fields: 'email, password',
+  #                 callback_url: 'https://localhost:3000/users/auth/twitter/callback'
+  # config.omniauth :instagram, ENV['INSTAGRAM_APP_ID'], ENV['INSTAGRAM_APP_SECRET'],
+  #                 setup: true,
+  #                 callback_url: 'https://localhost:3000/users/auth/instagram/callback'
+  # config.omniauth :google_oauth2, ENV["GOOGLE_APP_ID"], ENV["GOOGLE_APP_SECRET"],
+  #                 scope: "email",
+  #                 callback_url: 'https://localhost:3000/users/auth/google_oauth2/callback'
+  # config.omniauth :github, ENV["GITHUB_APP_ID"], ENV["GITHUB_APP_SECRET"],
+  #                 callback_url: 'https://localhost:3000/users/auth/github/callback'
 end
 
