@@ -5,7 +5,7 @@
     "@rails/webpacker": "3.4",
     "actioncable": "^5.2.0",
     "babel-preset-react": "^6.24.1",
-    "bootstrap": "3.3.7",
+    "bootstrap": "4.1.1",
     "dotenv": "^5.0.1",
     "dotenv-webpack": "^1.5.5",
     "font-awesome": "^4.7.0",

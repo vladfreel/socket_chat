@@ -36,8 +36,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'haml-rails', '~> 1.0'
-gem 'bootstrap-sass'
-gem 'jquery-rails'
 gem 'redis', '~> 3.2'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
