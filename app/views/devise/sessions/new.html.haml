@@ -5,8 +5,6 @@
         %h2.text-center.auth-head-text Log in
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .field
-            = f.text_field :login, class: 'auth-input', id: 'login-input', placeholder: 'Login'
-          .field
             = f.password_field :password, autocomplete: "off", class: 'auth-input', id: 'login-pwd-input', placeholder: 'Password'
           - if devise_mapping.rememberable?
             .field.remember-me

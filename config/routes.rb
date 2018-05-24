@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :users
+  devise_for :users
+
   resources :chat_rooms, only: [:new, :create, :show, :index]
   resources :private_chat_rooms, except: [:update, :edit, :destroy]
   resources :multi_user_private_chat_rooms
