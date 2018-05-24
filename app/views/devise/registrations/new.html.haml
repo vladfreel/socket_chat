@@ -6,7 +6,7 @@
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
           .field
-            = f.email_field :email, autocomplete: "email", class: 'auth-input', placeholder: 'Email'
+            = f.email_field :email, class: 'auth-input', placeholder: 'Email'
           .field
             = f.password_field :password, autocomplete: "off", class: 'auth-input', id: 'sign-up-pwd-input', placeholder: 'Password'
             - if @minimum_password_length
