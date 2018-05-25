@@ -1,5 +1,4 @@
 class PrivateChatRoomsController < ApplicationController
-
   def show
     @private_chat_room = PrivateChatRoom.includes(:private_messages).find(params[:id])
     @message = PrivateMessage.new
@@ -30,6 +29,6 @@ class PrivateChatRoomsController < ApplicationController
   private
 
   def private_chat_room_params
-    params.require(:private_chat_room).permit(:name, membership_attributes: %i[owner_idmember_id])
+    params.require(:private_chat_room).permit(:name, membership_attributes: %i[owner_id member_id])
   end
 end
