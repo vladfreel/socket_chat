@@ -1,3 +1,4 @@
+require 'rails_helper'
 RSpec.describe User, type: :model do
   it 'User has many comments' do
     expect(subject).to have_many(:chat_rooms).dependent(:destroy)

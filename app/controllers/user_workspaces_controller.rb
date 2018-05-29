@@ -1,0 +1,2 @@
+class UserWorkspacesController < ApplicationController
+end

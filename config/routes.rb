@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_workspaces
+  resources :workspaces
   devise_for :users, controllers: { confirmations: 'confirmations' }
 
   resources :chat_rooms, only: [:new, :create, :show, :index]
