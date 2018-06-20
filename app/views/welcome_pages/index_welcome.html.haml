@@ -1,1 +1,123 @@
-%h6 WelcomePages#index_welcome
+%section.page-home
+  .container
+    .row
+      .col-sm-5
+        = image_tag(asset_pack_path("images/home_illo.png"), class: "welcome_main_index")
+      .col-sm-1
+      .col-sm-6
+        %h1.o-hero__header__headline
+          Where Work
+          %br
+            Happens
+        %p.o-hero__header__copy.u-margin-left--flush
+          When your team needs to kick off a project,
+          hire a new employee, deploy some code,
+          review a sales contract, finalize next year's budget,
+          measure an A/B test, plan your next office opening,
+          and more, Socket Chat has you covered.
+        %button.btn.btn-primary.btn-lg
+          GET STARTED
+        %p.u-margin-bottom--flush.u-margin-top--medium.display-as-mini
+          Already using Socket Chat?
+          = link_to 'Sign in.', new_user_session_path
+%section.o-section.v--lighter-gray
+  %h2.u-margin-top--flush
+    You’re in good company
+  %p.u-margin-bottom--x-large
+    Millions of people around the world have already made Socket Chat the place where their work happens.
+  %button.btn.btn-default.btn-lg
+    DISCOVER WHY
+  .container.cont_with_imgs
+    .row
+      .col-sm-4.c-logowall__item.c-logowall__item_bottom
+        = image_tag(asset_pack_path("images/airbnb.png"))
+      .col-sm-4.c-logowall__item.c-logowall__item_bottom
+        = image_tag(asset_pack_path("images/capital_one.png"))
+      .col-sm-4.c-logowall__item_bottom.c-logowall__item_bottom_without_line
+        = image_tag(asset_pack_path("images/target.png"))
+    .row
+      .col-sm-4.c-logowall__item.c-logowall__item_in_bottom
+        = image_tag(asset_pack_path("images/los-angeles-times.png"))
+      .col-sm-4.c-logowall__item.c-logowall__item_in_bottom
+        = image_tag(asset_pack_path("images/oracle.png"))
+      .col-sm-4.c-logowall__item.c-logowall__item_in_bottom.c-logowall__item_without_line
+        = image_tag(asset_pack_path("images/ticketmaster.png"))
+.d-flex.justify-content-around.try_it_for_free.padding-index
+  %div
+    %h3.c-cta--signup__headline
+      Try it for free
+    %p.c-cta--signup__content
+      Already using Socket Chat?
+      = link_to 'Sign in.', new_user_session_path
+  %button.btn.btn-primary.btn-lg
+    GET STARTED
+
+.container.container_foot_padding
+  .row
+    .col-sm-1
+      %i.fa.fa-comment-o.fa-comment-logo
+    .col-sm-3
+    .col-sm-2
+      .c-nav--footer__block
+        %p.c-nav--footer__listheader Company
+        %ul.c-nav--footer__list
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} About Us
+          %li.c-nav--footer__listitem
+            %a{:href => "#"}  Careers
+          %li.c-nav--footer__listitem
+            %a{:href => "#"}  Blog
+          %li.c-nav--footer__listitem
+            %a{:href => "#"}  Press
+          %li.c-nav--footer__listitem
+            %a{:href => "#"}  Brand Guidelines
+
+    .col-sm-2
+      .c-nav--footer__block
+        %p.c-nav--footer__listheader Product
+        %ul.c-nav--footer__list
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Why Socket Chat?
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Enterprise
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Customer Stories
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Pricing
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Security
+    .col-sm-2
+      .c-nav--footer__block
+        %p.c-nav--footer__listheader Resources
+        %ul.c-nav--footer__list
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Download
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Help Center
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Guides
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Partners
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Events
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} App Directory
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} API
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Gartner Report
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} eBooks
+    .col-sm-2
+      .c-nav--footer__block
+        %p.c-nav--footer__listheader Extras
+        %ul.c-nav--footer__list
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Podcast
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Socket Chat Shop
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Socket Chat at Work
+          %li.c-nav--footer__listitem
+            %a{:href => "#"} Socket Chat Fund
+
