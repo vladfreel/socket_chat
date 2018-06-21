@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 import 'packs/sign_up'
 import 'packs/actioncable_connect'
+import 'packs/header'
 import 'style/application.scss'
 import 'images/default_avatar.png'
 

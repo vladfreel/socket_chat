@@ -1,37 +1,37 @@
-%nav.navbar.navbar-fixed-top.header-main-navbar
-  .container-fluid
-    .navbar-header
-      .navbar-brand.company-name
-        %i.fa.fa-comment
-        Socket Chat
-      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-    #navbar.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li
-          = link_to 'Public chats', root_path, class: 'header-menu-item', id: 'home-id'
-        %li
-          = link_to 'Messages', private_chat_rooms_path, class: 'header-menu-item', id: 'home-id'
-        %li
-          = link_to 'Private chats', multi_user_private_chat_rooms_path, class: 'header-menu-item', id: 'home-id'
-      %ul.nav.navbar-nav.navbar-right
-        - if user_signed_in?
-          %li
-            = link_to edit_user_registration_path, class: 'header-menu-item', id: 'header-profile' do
-              %i.glyphicon.glyphicon-user
-              Profile
-          %li
-            = link_to destroy_user_session_path, method: :delete, class: 'header-menu-item', id: 'header-logout' do
-              %i.glyphicon.glyphicon-log-out
-              Logout
-        - else
-          %li
-            = link_to new_user_registration_path, class: 'header-menu-item', id: 'header-sign-up' do
-              %i.glyphicon.glyphicon-user
-              Sign Up
-          %li
-            = link_to new_user_session_path, class: 'header-menu-item', id: 'header-login' do
-              %i.glyphicon.glyphicon-log-in
-              Login
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.welcome-navbar-main
+  .container
+    %i.fa.fa-comment-o.fa-2x
+      %span
+        %a.navbar-brand.header-company-name{:href => "#"} Socket Chat
+    %button.navbar-toggler#header-collapse-button{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    .collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item
+          %a.nav-link.header-nav-item{:href => "#"} Why Socket Chat?
+        %li.nav-item
+          %a.nav-link.header-nav-item{:href => "#"} About Us
+        %li.nav-item
+          %a.nav-link.header-nav-item{:href => "#"} Find Your Workspace
+        %li.nav-item.create-wp-nav-item
+          %a.nav-link.header-nav-item{:href => "#"} Create Workspace
+%ul#navbarSide.navbar-side
+  %li.navbar-side-header
+    .close-header-navbar-sidebar.mr-4.pb-3
+      %i.fa.fa-times-thin.fa-2x
+  %li.navbar-side-menu-item.ml-4.mt-5
+    Why Socket Chat?
+  %li.navbar-side-menu-item.ml-4.mt-4
+    About Us
+  %li.fixed-bottom.ml-4
+    .row.justify-content-center
+      .col-xs-12.d-block.d-sm-none.navbar-side-sign-in.mb-5
+        %p Sign in
+      .d-none.d-sm-block.d-md-block.d-lg-none.mb-5
+        %ul.list-inline
+          %li.list-inline-item
+            = link_to 'Find Your Workspace',  root_path, class: 'navbar-side-menu-workspace'
+            %span.ml-2.mr-1.text-white
+              |
+          %li.list-inline-item
+            = link_to 'Create Workspace',  root_path, class: 'navbar-side-menu-workspace'

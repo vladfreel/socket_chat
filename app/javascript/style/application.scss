@@ -1,5 +1,6 @@
 $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome';
+@import "variables";
 @import "auth";
 @import "header";
 @import "chat_room";
@@ -7,6 +8,7 @@ $fa-font-path: "~font-awesome/fonts";
 @import "main";
 @import "scaffolds";
 @import "users";
+@import "fonts";
 
 .test-class {
   color: white;

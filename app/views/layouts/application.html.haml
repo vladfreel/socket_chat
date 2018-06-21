@@ -13,6 +13,6 @@
     -#= stylesheet_pack_tag 'application'
     %link{:href => "https://fonts.googleapis.com/css?family=Kreon", :rel => "stylesheet"}/
   %body
-    = render 'layouts/header' unless no_header_page(controller.controller_name, controller.action_name)
+    = render 'layouts/header' if controller.controller_name == 'welcome_pages'
     = yield
     = render 'layouts/footer' unless no_footer_page(controller.controller_name, controller.action_name)
