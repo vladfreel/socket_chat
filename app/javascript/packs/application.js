@@ -16,6 +16,13 @@ import 'packs/actioncable_connect'
 import 'packs/header'
 import 'style/application.scss'
 import 'images/default_avatar.png'
+import 'images/home_illo.png'
+import 'images/airbnb.png'
+import 'images/capital_one.png'
+import 'images/los-angeles-times.png'
+import 'images/oracle.png'
+import 'images/target.png'
+import 'images/ticketmaster.png'
 
 console.log('Hello World from Webpacker');
 
