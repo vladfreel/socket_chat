@@ -1,3 +1,11 @@
+.row-style{
+  height: 100%;
+}
+
+.padding-zero{
+  padding-right: 0;
+  padding-left: 0;
+}
 
 .h-workspace-cont{
   height: 100%;
@@ -6,9 +14,9 @@
 .sidebar-ws-show{
   background: #4d394b;
   height: 100%;
-  width: 220px;
   position: absolute;
   text-align: center;
+  width: 100%;
 }
 
 .ws-name-show{
@@ -120,3 +128,77 @@
 .socket-bot{
   color: #cac4c9;
 }
+
+.ws-header{
+  height: 55px;
+  width: 100%;
+}
+.main-style-header{
+  position: fixed;
+  width: 83.333333%;
+}
+
+.time-line{
+  width: 100%;
+  height: 14px;
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+}
+
+.span-line{
+  font-size: 13px;
+  background-color: #fff;
+  padding: 0 15px;
+  font-weight: bold;
+}
+
+.span-line-text{
+  padding-top: 10px;
+}
+
+.black{
+  color: black;
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+}
+.btn-channel-name{
+  height: 30px;
+}
+
+.channel-header-icons{
+  margin-left: 10px;
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+.search {
+  position: relative;
+  display:inline-block;
+}
+
+.search input {
+  text-indent: 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.search .fa-search {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  font-size: 15px;
+}
+
+.ws-header-right{
+  padding-top: 20px;
+  padding-right: 5px;
+}
+
+.ws-header-right i{
+  font-size: 20px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+

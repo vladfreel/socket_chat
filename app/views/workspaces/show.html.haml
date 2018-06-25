@@ -1,68 +1,105 @@
 .container-fluid.h-workspace-cont
-  .row
-    .sidebar-ws-show
-      .dropdown.show
-        .btn-group.btn-group-width
-          %a#dropdownMenuLink.btn.btn-secondary.head_dropdown_title.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
-            %span.ws-name-show
-              = @workspace.name
-            %i.fa.fa-angle-down.grey
-            %p.grey
-              %i.fa.fa-circle
-              Vlad
-            %a#dropdownMenuLink2.btn.btn-secondary.head_dropdown_title.head_dropdown_title_right.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
-              %i.fa.fa-bell-o.white
-            .dropdown-menu{"aria-labelledby" => "dropdownMenuLink2"}
+  .row.row-style
+    .col-xl-2.col-lg-3.col-md-4.padding-zero
+      .sidebar-ws-show
+        .dropdown.show
+          .btn-group.btn-group-width
+            %a#dropdownMenuLink.btn.btn-secondary.head_dropdown_title.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
+              %span.ws-name-show
+                = @workspace.name
+              %i.fa.fa-angle-down.grey
+              %p.grey
+                %i.fa.fa-circle
+                Vlad
+              %a#dropdownMenuLink2.btn.btn-secondary.head_dropdown_title.head_dropdown_title_right.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
+                %i.fa.fa-bell-o.white
+              .dropdown-menu{"aria-labelledby" => "dropdownMenuLink2"}
+                %a.dropdown-item{:href => "#"} Action
+                %a.dropdown-item{:href => "#"} Another action
+                %a.dropdown-item{:href => "#"} Something else here
+            .dropdown-menu{"aria-labelledby" => "dropdownMenuLink"}
               %a.dropdown-item{:href => "#"} Action
               %a.dropdown-item{:href => "#"} Another action
               %a.dropdown-item{:href => "#"} Something else here
-          .dropdown-menu{"aria-labelledby" => "dropdownMenuLink"}
-            %a.dropdown-item{:href => "#"} Action
-            %a.dropdown-item{:href => "#"} Another action
-            %a.dropdown-item{:href => "#"} Something else here
-      %button.jump-to
-        %i.fa.fa-search
-        Jump to...
-      %button.all-threads
-        %i.fa.fa-commenting-o.white-sm
-          All Threads
-      .all-channels
-        %button.browse-channels
-          Channels
-        %button.add-channel
-          %i.fa.fa-plus-square
-      %button.all-threads
-        %i.fa.fa-hashtag.white-hash
-          general
-      %button.all-threads
-        %i.fa.fa-hashtag.white-hash
-          random
-      %button.all-threads
-        %i.fa.fa-lock.white-hash
-          private-channel
-      .all-channels
-        %button.browse-channels
-          Direct Messages
-        %button.add-channel
-          %i.fa.fa-plus-square
-      %button.all-threads
-        %i.fa.fa-heart.green
-        %span.socket-bot
-          socketbot
-      %button.all-threads
-        %i.fa.fa-circle-o.white-hash
-          Vlad
-      %button.all-threads
-        %i.fa.fa-circle.white-hash
-          Ihor
-      %button.all-threads
-        %i.fa.fa-circle-o.white-hash
-          Anton
-      %button.all-threads
-        %i.fa.fa-circle.white-hash
-          Someone
-      .all-channels
-        %button.browse-channels
-          Apps
-        %button.add-channel
-          %i.fa.fa-plus-square
+        %button.jump-to
+          %i.fa.fa-search
+          Jump to...
+        %button.all-threads
+          %i.fa.fa-commenting-o.white-sm
+            All Threads
+        .all-channels
+          %button.browse-channels
+            Channels
+          %button.add-channel
+            %i.fa.fa-plus-square
+        %button.all-threads
+          %i.fa.fa-hashtag.white-hash
+            general
+        %button.all-threads
+          %i.fa.fa-hashtag.white-hash
+            random
+        %button.all-threads
+          %i.fa.fa-lock.white-hash
+            private-channel
+        .all-channels
+          %button.browse-channels
+            Direct Messages
+          %button.add-channel
+            %i.fa.fa-plus-square
+        %button.all-threads
+          %i.fa.fa-heart.green
+          %span.socket-bot
+            socketbot
+        %button.all-threads
+          %i.fa.fa-circle-o.white-hash
+            Vlad
+        %button.all-threads
+          %i.fa.fa-circle.white-hash
+            Ihor
+        %button.all-threads
+          %i.fa.fa-circle-o.white-hash
+            Anton
+        %button.all-threads
+          %i.fa.fa-circle.white-hash
+            Someone
+        .all-channels
+          %button.browse-channels
+            Apps
+          %button.add-channel
+            %i.fa.fa-plus-square
+    .col-xl-10.col-lg-9.col-md-8.padding-zero
+      .main-style-header
+        .ws-header
+          .d-flex.justify-content-between
+            .ws-header-left
+              .dropdown
+                %a#dropdownMenuLink3.btn.btn-channel-name.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
+                  %p.black
+                    %i.fa.fa-lock
+                    Channel Name
+                .dropdown-menu{"aria-labelledby" => "dropdownMenuLink3"}
+                  %a.dropdown-item{:href => "#"} Action
+                  %a.dropdown-item{:href => "#"} Another action
+                  %a.dropdown-item{:href => "#"} Something else here
+              .channel-header-icons
+                %i.fa.fa-star-o
+                |
+                %i.fa.fa-user-o
+                7
+                |
+                %i.fa.fa-pencil
+                Add a topic
+            .ws-header-right
+              %i.fa.fa-phone
+              %i.fa.fa-info-circle
+              %i.fa.fa-cog
+              .search
+                %span.fa.fa-search
+                %input{:placeholder => "Search"}
+              %i.fa.fa-at
+              %i.fa.fa-star-o
+              %i.fa.fa-align-justify
+        .time-line
+          %span.span-line
+            %span.span-line-text
+              Thursday,May 31 st
