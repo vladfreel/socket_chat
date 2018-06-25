@@ -1,0 +1,122 @@
+
+.h-workspace-cont{
+  height: 100%;
+}
+
+.sidebar-ws-show{
+  background: #4d394b;
+  height: 100%;
+  width: 220px;
+  position: absolute;
+  text-align: center;
+}
+
+.ws-name-show{
+  font-size: 1.125rem;
+  line-height: 1.375;
+  color: #fff;
+  font-weight: 900;
+  font-family: NotoSansJP,Slack-Lato,appleLogo,sans-serif;
+  text-align: left;
+}
+
+.grey{
+  color: #a09a9f;
+  text-align: left;
+}
+
+.white{
+  color: #fff;
+  text-align: right;
+  font-size: 1.3em;
+  padding-right: 20px;
+  padding-top: 5px;
+}
+
+.head_dropdown_title
+{
+  background: #4d394b !important;
+  border: 0 !important;
+  height: 61px !important;
+  width: 200px;
+  text-align: left;
+}
+.head_dropdown_title:focus {
+
+  box-shadow: 0 0 0 0.0rem rgba(108, 117, 125, .5) !important;
+}
+.dropdown-toggle::after {
+  display:none;
+}
+
+.btn-group-width{
+  width: 100%;
+  padding-top: 5px;
+}
+.head_dropdown_title_right{
+  text-align: right;
+}
+
+.jump-to{
+  width: 90%;
+  background: rgb(52,32,50);
+  border: 0;
+  color: rgb(202,196,201);
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.all-threads{
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  text-align: left;
+}
+.all-threads:hover{
+  background: rgb(52,32,50);
+  border: 0;
+}
+.all-threads i{
+  padding-left: 5px;
+}
+.white-sm{
+  color: #fff;
+  font-size: 1.1em;
+}
+.all-threads:active{
+  border: 0;
+}
+
+.all-channels{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.browse-channels{
+  text-align: left;
+  width: 70%;
+  background-color: transparent;
+  border: 0;
+  color: #cac4c9;
+}
+
+.add-channel{
+  width: 20%;
+  background-color: transparent;
+  border: 0;
+  color: #cac4c9;
+}
+.white-hash{
+  color: #cac4c9;
+  padding-left: 10px !important;
+}
+
+.green{
+  color: green;
+  padding-left: 10px !important;
+}
+
+.socket-bot{
+  color: #cac4c9;
+}
