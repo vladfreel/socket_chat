@@ -1,5 +1,5 @@
 .container-fluid.h-workspace-cont
-  .row.row-style
+  .row.d-flex.h-100
     .col-xl-2.col-lg-3.col-md-4.padding-zero
       .sidebar-ws-show
         .dropdown.show
@@ -67,39 +67,211 @@
             Apps
           %button.add-channel
             %i.fa.fa-plus-square
-    .col-xl-10.col-lg-9.col-md-8.padding-zero
-      .main-style-header
-        .ws-header
-          .d-flex.justify-content-between
-            .ws-header-left
-              .dropdown
-                %a#dropdownMenuLink3.btn.btn-channel-name.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
-                  %p.black
-                    %i.fa.fa-lock
-                    Channel Name
-                .dropdown-menu{"aria-labelledby" => "dropdownMenuLink3"}
-                  %a.dropdown-item{:href => "#"} Action
-                  %a.dropdown-item{:href => "#"} Another action
-                  %a.dropdown-item{:href => "#"} Something else here
-              .channel-header-icons
+    .col-xl-10.col-lg-9.col-md-8.p-0.h-100
+      .div
+        .main-style-header
+          .ws-header
+            .d-flex.justify-content-between.bg-white
+              .ws-header-left
+                .dropdown
+                  %a#dropdownMenuLink3.btn.btn-channel-name.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
+                    %p.black
+                      %i.fa.fa-lock
+                      Channel Name
+                  .dropdown-menu{"aria-labelledby" => "dropdownMenuLink3"}
+                    %a.dropdown-item{:href => "#"} Action
+                    %a.dropdown-item{:href => "#"} Another action
+                    %a.dropdown-item{:href => "#"} Something else here
+                .channel-header-icons
+                  %i.fa.fa-star-o
+                  |
+                  %i.fa.fa-user-o
+                  7
+                  |
+                  %i.fa.fa-pencil
+                  Add a topic
+              .ws-header-right
+                %i.fa.fa-phone
+                %i.fa.fa-info-circle
+                .dropdown.search
+                  %a#dropdownMenuLink4.btn.btn-channel-config.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
+                    %i.fa.fa-cog.black
+                  .dropdown-menu{"aria-labelledby" => "dropdownMenuLink4"}
+                    %a.dropdown-item{:href => "#"} Action
+                    %a.dropdown-item{:href => "#"} Another action
+                    %a.dropdown-item{:href => "#"} Something else here
+                .search
+                  %span.fa.fa-search
+                  %input{:placeholder => "Search"}
+                %i.fa.fa-at
                 %i.fa.fa-star-o
-                |
-                %i.fa.fa-user-o
-                7
-                |
-                %i.fa.fa-pencil
-                Add a topic
-            .ws-header-right
-              %i.fa.fa-phone
-              %i.fa.fa-info-circle
-              %i.fa.fa-cog
-              .search
-                %span.fa.fa-search
-                %input{:placeholder => "Search"}
-              %i.fa.fa-at
-              %i.fa.fa-star-o
-              %i.fa.fa-align-justify
-        .time-line
-          %span.span-line
-            %span.span-line-text
-              Thursday,May 31 st
+                .dropdown.search
+                  %a#dropdownMenuLink5.btn.btn-channel-config.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button" }
+                    %i.fa.fa-align-justify.black
+                  .dropdown-menu{"aria-labelledby" => "dropdownMenuLink5"}
+                    %a.dropdown-item{:href => "#"} Action
+                    %a.dropdown-item{:href => "#"} Another action
+                    %a.dropdown-item{:href => "#"} Something else here
+          .time-line.bg-white
+            %span.span-line
+              %span.span-line-text
+                Thursday,May 31 st
+        .mg-content
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  %br
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  Text Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  %br
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  Text Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+            .container-fluid.p-0
+              .row.msg-container.darker
+                .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                  = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+                .col-xl-11.col-lg-10.col-md-9.p-0
+                  %span.chat-user-name
+                    Vlad
+                    .time
+                      13:26
+                  %p.msg-text
+                    Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                    %br
+                    Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                    Text Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  %br
+                  Text Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+          .time-line.bg-white.between-messages
+            %span.span-line
+              %span.span-line-text
+                Wendesday,June 6 th
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  Text Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/default_avatar.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Anton
+                  .time
+                    13:26
+                %p.msg-text
+                  Aliquam quis cursus sapien. Pellentesque ac malesuada risus. Etiam at neque eget libero ultrices consectetur quis id massa. Cras id pulvinar turpis, vitae scelerisque orci. Phasellus non mauris lacus. Cras tincidunt lorem eget mollis lacinia. Morbi dapibus ut nisi in posuere. Sed congue, mauris id hendrerit dignissim, quam dolor suscipit metus, ut porttitor est dolor et metus. Etiam mauris nisi, interdum sed posuere quis, viverra fermentum nibh. Morbi vitae condimentum ligula, sit amet mattis urna.
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Nam bibendum ipsum ex, ac consequat risus accumsan eu. Proin a pretium dolor. Aenean congue ex ante, eu sodales lacus ornare eget. Proin in fringilla diam. Quisque sit amet nunc consequat odio gravida tincidunt et et nulla. Curabitur tincidunt ipsum a neque molestie laoreet. Curabitur in commodo dui.
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Donec magna arcu, malesuada ut mauris quis, suscipit tempus velit. Fusce nec rhoncus quam. Donec volutpat semper molestie. Pellentesque rutrum vestibulum congue. Mauris eget ipsum at nulla pharetra pharetra. Quisque feugiat, mi eget malesuada pharetra, dolor urna pharetra diam, nec volutpat ipsum augue euismod diam. Pellentesque tempor nulla et sodales ullamcorper. Etiam eu luctus elit. In eu bibendum justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et tellus nunc. Nam quis mattis libero. Mauris tristique eget urna id mattis. Cras pulvinar libero in mauris egestas ultricies. Fusce id viverra justo. Mauris vel ante leo.
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+          .time-line.bg-white.between-messages
+            %span.span-line
+              %span.span-line-text
+                Tuesday,June 28 th
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Maecenas faucibus iaculis sapien non convallis. Integer vitae nunc ligula. Proin lectus elit, pretium a sem eget, aliquam bibendum sem. Aenean facilisis metus ut purus maximus, quis ornare est pellentesque. Mauris feugiat sed ex eget pharetra. In quis enim consectetur lectus fringilla sagittis quis et sapien. Pellentesque in quam ac dui iaculis euismod in in nunc. Nunc sem quam, finibus at nibh id, efficitur dapibus purus. Sed felis felis, rhoncus finibus lorem ullamcorper, iaculis luctus mauris. Cras auctor scelerisque congue. Cras posuere augue quis lectus mattis, dignissim aliquet quam bibendum.
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/oracle.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Ihor
+                  .time
+                    13:26
+                %p.msg-text
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare pellentesque est, sit amet imperdiet massa ultricies in. Pellentesque eget ex semper, vehicula dui eu, tristique enim. Etiam tincidunt ipsum ac sapien euismod, ac tempor sem rhoncus. Curabitur tristique efficitur dolor nec iaculis. Sed eget dolor neque. Aenean dolor mi, rutrum vel pretium eu, egestas at purus. Aliquam vel odio mi. Fusce egestas, tellus eu egestas mollis, dolor urna lacinia arcu, quis tempor est ante lobortis enim. Curabitur bibendum vehicula venenatis. Suspendisse blandit nunc tellus. Maecenas facilisis purus mi, at fringilla tortor tincidunt vitae.
+          .container-fluid.p-0
+            .row.msg-container.darker
+              .col-xl-1.col-lg-2.col-md-3.p-0.text-align-center
+                = image_tag(asset_pack_path("images/home_illo.png"), class: "left")
+              .col-xl-11.col-lg-10.col-md-9.p-0
+                %span.chat-user-name
+                  Vlad
+                  .time
+                    13:26
+                %p.msg-text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+                  Text Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text  Text
+        .msg-add
+          %input

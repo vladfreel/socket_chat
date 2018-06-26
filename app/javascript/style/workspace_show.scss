@@ -14,9 +14,7 @@
 .sidebar-ws-show{
   background: #4d394b;
   height: 100%;
-  position: absolute;
   text-align: center;
-  width: 100%;
 }
 
 .ws-name-show{
@@ -136,6 +134,7 @@
 .main-style-header{
   position: fixed;
   width: 83.333333%;
+  top: 0;
 }
 
 .time-line{
@@ -175,6 +174,7 @@
 .search {
   position: relative;
   display:inline-block;
+  color: black;
 }
 
 .search input {
@@ -202,3 +202,113 @@
   padding-left: 5px;
 }
 
+.btn-channel-config{
+  vertical-align: 0;
+  padding: 0;
+}
+.bg-white{
+  background-color: white;
+}
+
+.mg-content {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.div {
+  height: calc(100% - 70px);
+  overflow: auto;
+  margin-top: 70px;
+}
+
+.msg-container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Darker chat container */
+.darker {
+  border: 0;
+  background-color: #fff;
+}
+.darker:hover {
+  border-color: #ccc;
+  background-color: #eee;
+}
+
+/* Clear floats */
+.msg-container::after {
+
+}
+
+/* Style images */
+.msg-container img {
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.msg-container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+.chat-user-name {
+  font-weight: bolder;
+}
+
+
+.msg-text{
+  line-height: 1.46668;
+  margin: 8px 0 -4px;
+  display: inline-block;
+  width: 100%;
+  color: #2c2d30;
+  word-wrap: break-word;
+  font-size: 15px;
+}
+
+.time{
+  display:inline-block;
+  font-weight: 300;
+  font-size: 13px;
+  color: #616161;
+}
+
+.img-msg-cont{
+  height: 100%;
+}
+
+.text-align-center{
+  text-align: center;
+}
+
+.between-messages{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.msg-add{
+  position: fixed;
+  width: 100%;
+  height: 66px;
+  bottom: 0;
+  background-image: linear-gradient(to bottom,rgba(255,255,255,0),#fff 6px);
+}
